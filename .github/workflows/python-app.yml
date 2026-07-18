@@ -94,7 +94,7 @@ jobs:
 
           sleep 5
 
-          podman logs pokeapi-container
+          docker logs pokeapi-container
 
       - name: Verificar se o Container ainda está de Pé
         run: docker ps | grep pokeapi-container | grep Up
