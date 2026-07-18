@@ -4,8 +4,8 @@ from elasticsearch import AsyncElasticsearch
 import os
 from datetime import datetime
 
-ES_HOST = os.getenv('ES_HOST')
-ES_PORT = os.getenv('ES_PORT')
+ES_HOST = os.getenv('ES_HOST', 'localhost')
+ES_PORT = os.getenv('ES_PORT', '9200')
 
 # Conecta com o elasticsearch
 es_client = AsyncElasticsearch(hosts=[f'http://{ES_HOST}:{ES_PORT}'])
