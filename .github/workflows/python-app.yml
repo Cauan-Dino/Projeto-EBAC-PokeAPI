@@ -26,6 +26,7 @@ jobs:
           cache: poetry
 
       - name: Baixar Dependências com o Poetry
+        working-directory: ./pokeapi
         run: poetry install --no-interaction --no-root
 
       - name: Executar teste
