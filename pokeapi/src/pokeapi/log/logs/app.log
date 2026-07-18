@@ -1,0 +1,688 @@
+2026-07-16 22:56:10,820 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-16 22:57:11,977 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-16 22:57:23,868 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-16 22:57:30,425 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-16 22:57:36,092 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-16 22:57:44,401 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-16 22:58:10,672 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-16 22:58:14,275 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-16 22:58:24,369 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:03:23,327 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:03:50,707 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:04:30,453 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:04:39,939 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:04:48,387 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:05:15,778 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:06:27,350 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:07:46,305 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:07:53,612 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:09:19,177 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:11:43,017 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:12:05,222 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:13:53,066 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:13:55,455 - INFO - [_async_transport.py:294] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:N/A duration:2.275s]
+2026-07-17 13:13:55,455 - WARNING - [_node_pool.py:249] - Node <AiohttpHttpNode(http://elasticsearch:9200)> has failed for 1 times in a row, putting on 1 second timeout
+2026-07-17 13:13:55,455 - WARNING - [_async_transport.py:337] - Retrying request after failure (attempt 0 of 3)
+Traceback (most recent call last):
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_async_transport.py", line 264, in perform_request
+    resp = await node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_node\_http_aiohttp.py", line 227, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClientConnectorDNSError(Cannot connect to host elasticsearch:9200 ssl:default [getaddrinfo failed])
+2026-07-17 13:13:57,737 - INFO - [_async_transport.py:294] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:N/A duration:2.281s]
+2026-07-17 13:13:57,737 - WARNING - [_node_pool.py:249] - Node <AiohttpHttpNode(http://elasticsearch:9200)> has failed for 2 times in a row, putting on 2 second timeout
+2026-07-17 13:13:57,737 - WARNING - [_async_transport.py:337] - Retrying request after failure (attempt 1 of 3)
+Traceback (most recent call last):
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_async_transport.py", line 264, in perform_request
+    resp = await node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_node\_http_aiohttp.py", line 227, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClientConnectorDNSError(Cannot connect to host elasticsearch:9200 ssl:default [getaddrinfo failed])
+2026-07-17 13:13:57,738 - INFO - [_node_pool.py:310] - Resurrected node <AiohttpHttpNode(http://elasticsearch:9200)> (force=False)
+2026-07-17 13:14:00,024 - INFO - [_async_transport.py:294] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:N/A duration:2.285s]
+2026-07-17 13:14:00,024 - WARNING - [_node_pool.py:249] - Node <AiohttpHttpNode(http://elasticsearch:9200)> has failed for 3 times in a row, putting on 4 second timeout
+2026-07-17 13:14:00,024 - WARNING - [_async_transport.py:337] - Retrying request after failure (attempt 2 of 3)
+Traceback (most recent call last):
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_async_transport.py", line 264, in perform_request
+    resp = await node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_node\_http_aiohttp.py", line 227, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClientConnectorDNSError(Cannot connect to host elasticsearch:9200 ssl:default [getaddrinfo failed])
+2026-07-17 13:14:00,025 - INFO - [_node_pool.py:310] - Resurrected node <AiohttpHttpNode(http://elasticsearch:9200)> (force=False)
+2026-07-17 13:14:02,314 - INFO - [_async_transport.py:294] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:N/A duration:2.289s]
+2026-07-17 13:14:02,314 - WARNING - [_node_pool.py:249] - Node <AiohttpHttpNode(http://elasticsearch:9200)> has failed for 4 times in a row, putting on 8 second timeout
+2026-07-17 13:14:02,314 - ERROR - [logs_settings.py:52] - Erro ao enviar log para o Elasticsearch: Connection error caused by: ConnectionError(Connection error caused by: ClientConnectorDNSError(Cannot connect to host elasticsearch:9200 ssl:default [getaddrinfo failed]))
+2026-07-17 13:14:38,222 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:20:00,400 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:20:00,519 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:20:40,019 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:20:40,140 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:20:54,487 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:20:54,604 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:21:11,500 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:21:11,616 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:24:18,481 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:24:18,610 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:25:07,421 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:25:07,541 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:31:10,175 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:31:10,308 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:31:14,045 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:31:14,163 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:31:42,124 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:31:42,242 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:31:51,824 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:31:51,938 - INFO - [_client.py:1025] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:51:01,631 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 13:51:01,636 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:51:01,754 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:51:23,018 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 13:51:23,023 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:51:23,137 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:52:12,846 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 13:52:12,850 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 13:52:12,963 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 14:00:47,707 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 14:00:47,712 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 14:00:47,827 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 14:01:00,568 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 14:01:00,573 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 14:01:00,686 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 14:02:36,182 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 14:02:36,186 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 14:02:36,317 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 14:02:55,685 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 14:02:55,690 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 14:02:55,806 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 14:03:26,330 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 14:03:26,334 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 14:03:26,449 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 14:05:23,963 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 14:05:23,968 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 14:05:24,083 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 14:05:24,436 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 14:05:24,438 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:16:32,473 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 17:16:32,479 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:16:32,592 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:16:32,948 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:16:32,952 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:17:07,594 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 17:17:07,599 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:17:07,712 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:17:08,069 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:17:08,071 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:22:41,835 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 17:22:41,841 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:22:41,955 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:22:42,290 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:22:42,296 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:28:09,325 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 17:28:09,333 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:28:09,446 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:28:09,798 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:28:09,801 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:49:19,775 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 17:49:19,782 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:49:19,895 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:49:20,223 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:49:20,225 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:50:34,426 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 17:50:34,435 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:50:34,549 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:50:34,855 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:50:34,859 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:51:10,886 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 17:51:10,890 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:51:11,001 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:51:11,346 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:51:11,349 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:52:40,214 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 17:52:40,220 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:52:40,336 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:52:40,645 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:52:40,647 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:52:52,234 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 17:52:52,241 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:52:52,353 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:52:52,681 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:52:52,683 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:53:01,553 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 17:53:01,558 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:53:01,671 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:53:02,025 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:53:02,028 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:53:02,135 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:53:34,384 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 17:53:34,388 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:53:34,502 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:53:34,808 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:53:34,810 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:53:42,713 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 17:53:42,718 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:53:42,830 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 17:53:43,157 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:53:43,159 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 17:53:43,267 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 18:38:06,564 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 18:38:06,568 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 18:38:06,687 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 18:38:06,988 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 18:38:06,990 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 18:38:07,101 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 18:44:12,020 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 18:44:12,024 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 18:44:12,147 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 18:44:12,488 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 18:44:12,490 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 18:44:12,608 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-17 19:21:22,206 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 19:21:22,210 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 19:21:22,337 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 19:21:22,683 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 19:21:22,685 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 19:21:22,807 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-17 19:40:00,874 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 19:40:00,878 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 19:40:01,002 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 19:40:01,314 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 19:40:01,316 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 19:40:01,431 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-17 19:41:41,390 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 19:41:41,394 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 19:41:41,517 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 19:41:41,860 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 19:41:41,862 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 19:41:41,978 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-17 19:43:49,591 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 19:43:49,595 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 19:43:49,718 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 19:43:50,054 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 19:43:50,056 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 19:46:22,873 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 19:46:22,877 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 19:46:23,001 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 19:46:23,355 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 19:46:23,357 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 19:46:23,477 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-17 19:46:28,930 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-17 19:46:28,933 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 19:46:29,066 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-17 19:46:29,399 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 19:46:29,401 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 19:46:29,515 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:32:09,875 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:32:09,881 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:32:09,997 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:32:10,352 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:32:10,354 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:32:10,466 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:32:34,272 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:32:34,276 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:32:34,392 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:32:34,753 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:32:34,757 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:32:34,867 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:32:49,864 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:32:49,868 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:32:49,988 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:32:50,350 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:32:50,352 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:32:50,468 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:33:24,374 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:33:24,380 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:33:24,493 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:33:24,848 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:33:24,851 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:35:06,905 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:35:06,911 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:35:07,028 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:35:07,386 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:35:07,389 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:35:07,501 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:38:45,023 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:38:45,028 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:38:45,142 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:38:45,493 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:38:45,495 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:38:45,605 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:42:55,047 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:42:55,052 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:42:55,163 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:42:55,522 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:42:55,524 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:42:55,633 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:43:05,761 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:43:05,768 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:43:05,880 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:43:06,241 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:43:06,243 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:43:06,352 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:43:47,257 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:43:47,262 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:43:47,375 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:43:47,727 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:43:47,729 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:43:47,839 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:44:04,062 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:44:04,069 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:44:04,322 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:44:04,687 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:44:04,693 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:44:04,807 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:44:17,825 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:44:17,830 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:44:18,093 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:44:18,441 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:44:18,443 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:44:18,550 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:44:26,110 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:44:26,114 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:44:26,382 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:44:26,741 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:44:26,747 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:44:26,864 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:44:52,515 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:44:52,523 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:44:52,782 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:44:53,087 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:44:53,091 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:44:53,203 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:45:01,286 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:45:01,295 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:45:01,412 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:45:01,764 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:45:01,766 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:45:01,888 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:45:47,340 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:45:47,344 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:45:47,456 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:45:47,942 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:45:47,948 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:45:48,061 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:46:18,056 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:46:18,060 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:46:18,181 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:46:18,686 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:46:18,691 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:46:18,803 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:46:46,686 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:46:46,692 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:46:47,057 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:46:47,063 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:46:47,552 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:46:47,557 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:46:47,666 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:48:17,662 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:48:17,671 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:48:17,782 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:48:18,253 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:48:18,259 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:48:18,371 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:58:00,191 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:58:00,196 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:58:00,312 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:58:00,806 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:58:00,808 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:58:00,919 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:58:11,731 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:58:11,737 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:58:11,860 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:58:12,345 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:58:12,347 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:58:12,458 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:58:59,083 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:58:59,088 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:58:59,202 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:58:59,720 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:58:59,722 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:58:59,833 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 08:59:27,998 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 08:59:28,002 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 08:59:28,562 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:59:28,564 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 08:59:28,680 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 09:04:18,425 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 09:04:18,430 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 09:04:18,554 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 09:04:19,044 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 09:04:19,046 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 09:04:19,165 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 09:04:39,531 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 09:04:39,536 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 09:04:39,651 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 09:04:40,003 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 09:04:40,006 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 09:04:40,116 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 09:08:20,499 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 09:08:20,505 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 09:08:20,619 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 09:08:20,989 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 09:08:20,993 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 09:08:21,246 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 09:09:46,809 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 09:09:46,815 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 09:09:46,931 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 09:09:47,292 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 09:09:47,296 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 09:09:47,410 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 11:09:06,490 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:09:06,909 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 11:09:06,910 - ERROR - [buscar_pokemon.py:50] - Erro ao conectar com a PokeAPI: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:09:06,912 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons "HTTP/1.1 503 Service Unavailable"
+2026-07-18 11:09:07,446 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 11:09:07,453 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 11:09:07,566 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 11:09:07,919 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 11:09:07,921 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 11:09:08,031 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 11:10:28,433 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:10:28,718 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 11:10:28,719 - ERROR - [buscar_pokemon.py:50] - Erro ao conectar com a PokeAPI: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:10:28,721 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons "HTTP/1.1 503 Service Unavailable"
+2026-07-18 11:10:29,194 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 11:10:29,197 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 11:10:29,314 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 11:10:29,650 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 11:10:29,652 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 11:10:29,773 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 11:11:06,780 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:11:07,071 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 11:11:07,072 - ERROR - [buscar_pokemon.py:50] - Erro ao conectar com a PokeAPI: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:11:07,074 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons "HTTP/1.1 503 Service Unavailable"
+2026-07-18 11:12:19,434 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:12:19,757 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 11:12:19,757 - ERROR - [buscar_pokemon.py:50] - Erro ao conectar com a PokeAPI: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:12:19,759 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 503 Service Unavailable"
+2026-07-18 11:15:33,882 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:15:33,883 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:18:28,957 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:18:29,223 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 11:18:29,224 - ERROR - [buscar_pokemon.py:50] - Erro ao conectar com a PokeAPI: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:18:31,502 - INFO - [_async_transport.py:294] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:N/A duration:2.278s]
+2026-07-18 11:18:31,502 - WARNING - [_node_pool.py:249] - Node <AiohttpHttpNode(http://elasticsearch:9200)> has failed for 1 times in a row, putting on 1 second timeout
+2026-07-18 11:18:31,502 - WARNING - [_async_transport.py:337] - Retrying request after failure (attempt 0 of 3)
+Traceback (most recent call last):
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_async_transport.py", line 264, in perform_request
+    resp = await node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_node\_http_aiohttp.py", line 227, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClientConnectorDNSError(Cannot connect to host elasticsearch:9200 ssl:default [getaddrinfo failed])
+2026-07-18 11:18:33,786 - INFO - [_async_transport.py:294] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:N/A duration:2.281s]
+2026-07-18 11:18:33,786 - WARNING - [_node_pool.py:249] - Node <AiohttpHttpNode(http://elasticsearch:9200)> has failed for 2 times in a row, putting on 2 second timeout
+2026-07-18 11:18:33,786 - WARNING - [_async_transport.py:337] - Retrying request after failure (attempt 1 of 3)
+Traceback (most recent call last):
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_async_transport.py", line 264, in perform_request
+    resp = await node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_node\_http_aiohttp.py", line 227, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClientConnectorDNSError(Cannot connect to host elasticsearch:9200 ssl:default [getaddrinfo failed])
+2026-07-18 11:18:33,787 - INFO - [_node_pool.py:310] - Resurrected node <AiohttpHttpNode(http://elasticsearch:9200)> (force=False)
+2026-07-18 11:18:36,071 - INFO - [_async_transport.py:294] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:N/A duration:2.284s]
+2026-07-18 11:18:36,071 - WARNING - [_node_pool.py:249] - Node <AiohttpHttpNode(http://elasticsearch:9200)> has failed for 3 times in a row, putting on 4 second timeout
+2026-07-18 11:18:36,071 - WARNING - [_async_transport.py:337] - Retrying request after failure (attempt 2 of 3)
+Traceback (most recent call last):
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_async_transport.py", line 264, in perform_request
+    resp = await node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_node\_http_aiohttp.py", line 227, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClientConnectorDNSError(Cannot connect to host elasticsearch:9200 ssl:default [getaddrinfo failed])
+2026-07-18 11:18:36,072 - INFO - [_node_pool.py:310] - Resurrected node <AiohttpHttpNode(http://elasticsearch:9200)> (force=False)
+2026-07-18 11:18:38,361 - INFO - [_async_transport.py:294] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:N/A duration:2.289s]
+2026-07-18 11:18:38,361 - WARNING - [_node_pool.py:249] - Node <AiohttpHttpNode(http://elasticsearch:9200)> has failed for 4 times in a row, putting on 8 second timeout
+2026-07-18 11:18:38,361 - ERROR - [logs_settings.py:52] - Erro ao enviar log para o Elasticsearch: Connection error caused by: ConnectionError(Connection error caused by: ClientConnectorDNSError(Cannot connect to host elasticsearch:9200 ssl:default [getaddrinfo failed]))
+2026-07-18 11:18:38,362 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 503 Service Unavailable"
+2026-07-18 11:20:56,453 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:20:56,454 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:22:02,642 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:22:02,644 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:22:28,191 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:22:28,193 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:22:28,610 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 11:22:28,615 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 11:22:29,203 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 11:22:29,206 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 11:22:29,319 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 11:22:37,525 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:22:37,526 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:22:37,961 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 11:22:37,965 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 11:22:38,080 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 11:22:38,427 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 11:22:38,430 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 11:22:38,543 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 11:25:34,275 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:25:34,277 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:34:59,569 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:34:59,571 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:34:59,915 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 11:35:00,372 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 11:35:00,374 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 11:35:00,485 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 11:35:08,586 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:35:08,587 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:35:08,701 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 11:35:08,814 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 11:35:09,154 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 11:35:09,156 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 11:35:09,269 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 11:36:17,552 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:36:17,553 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:36:17,671 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 11:36:17,789 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 11:36:18,186 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 11:36:18,188 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 11:36:18,302 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 11:38:24,531 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:38:24,532 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:38:24,645 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 11:38:24,762 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 200 OK"
+2026-07-18 11:38:25,138 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 11:38:25,141 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 11:38:25,253 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 200 OK"
+2026-07-18 11:41:18,286 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:41:18,287 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:41:18,313 - ERROR - [buscar_pokemon.py:104] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:41:20,588 - INFO - [_async_transport.py:294] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:N/A duration:2.275s]
+2026-07-18 11:41:20,588 - WARNING - [_node_pool.py:249] - Node <AiohttpHttpNode(http://elasticsearch:9200)> has failed for 1 times in a row, putting on 1 second timeout
+2026-07-18 11:41:20,589 - WARNING - [_async_transport.py:337] - Retrying request after failure (attempt 0 of 3)
+Traceback (most recent call last):
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_async_transport.py", line 264, in perform_request
+    resp = await node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_node\_http_aiohttp.py", line 227, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClientConnectorDNSError(Cannot connect to host elasticsearch:9200 ssl:default [getaddrinfo failed])
+2026-07-18 11:41:22,882 - INFO - [_async_transport.py:294] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:N/A duration:2.291s]
+2026-07-18 11:41:22,883 - WARNING - [_node_pool.py:249] - Node <AiohttpHttpNode(http://elasticsearch:9200)> has failed for 2 times in a row, putting on 2 second timeout
+2026-07-18 11:41:22,883 - WARNING - [_async_transport.py:337] - Retrying request after failure (attempt 1 of 3)
+Traceback (most recent call last):
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_async_transport.py", line 264, in perform_request
+    resp = await node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_node\_http_aiohttp.py", line 227, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClientConnectorDNSError(Cannot connect to host elasticsearch:9200 ssl:default [getaddrinfo failed])
+2026-07-18 11:41:22,885 - INFO - [_node_pool.py:310] - Resurrected node <AiohttpHttpNode(http://elasticsearch:9200)> (force=False)
+2026-07-18 11:41:25,166 - INFO - [_async_transport.py:294] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:N/A duration:2.281s]
+2026-07-18 11:41:25,166 - WARNING - [_node_pool.py:249] - Node <AiohttpHttpNode(http://elasticsearch:9200)> has failed for 3 times in a row, putting on 4 second timeout
+2026-07-18 11:41:25,166 - WARNING - [_async_transport.py:337] - Retrying request after failure (attempt 2 of 3)
+Traceback (most recent call last):
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_async_transport.py", line 264, in perform_request
+    resp = await node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_node\_http_aiohttp.py", line 227, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClientConnectorDNSError(Cannot connect to host elasticsearch:9200 ssl:default [getaddrinfo failed])
+2026-07-18 11:41:25,167 - INFO - [_node_pool.py:310] - Resurrected node <AiohttpHttpNode(http://elasticsearch:9200)> (force=False)
+2026-07-18 11:41:27,452 - INFO - [_async_transport.py:294] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:N/A duration:2.285s]
+2026-07-18 11:41:27,452 - WARNING - [_node_pool.py:249] - Node <AiohttpHttpNode(http://elasticsearch:9200)> has failed for 4 times in a row, putting on 8 second timeout
+2026-07-18 11:41:27,452 - ERROR - [logs_settings.py:52] - Erro ao enviar log para o Elasticsearch: Connection error caused by: ConnectionError(Connection error caused by: ClientConnectorDNSError(Cannot connect to host elasticsearch:9200 ssl:default [getaddrinfo failed]))
+2026-07-18 11:41:27,455 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/99999 "HTTP/1.1 404 Not Found"
+2026-07-18 11:41:51,764 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:41:51,765 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:41:51,791 - ERROR - [buscar_pokemon.py:104] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:41:51,792 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/99999 "HTTP/1.1 404 Not Found"
+2026-07-18 11:47:38,248 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:47:38,249 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:47:38,275 - ERROR - [buscar_pokemon.py:104] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:47:38,276 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/99999 "HTTP/1.1 404 Not Found"
+2026-07-18 11:47:49,855 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:47:49,856 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:47:49,883 - ERROR - [buscar_pokemon.py:104] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:47:49,885 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/99999 "HTTP/1.1 404 Not Found"
+2026-07-18 11:48:45,551 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:48:45,553 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:48:45,580 - ERROR - [buscar_pokemon.py:104] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:48:45,581 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/99999 "HTTP/1.1 404 Not Found"
+2026-07-18 11:49:26,468 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:49:26,469 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:49:26,496 - ERROR - [buscar_pokemon.py:104] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:49:26,497 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/99999 "HTTP/1.1 404 Not Found"
+2026-07-18 11:49:26,523 - ERROR - [buscar_pokemon.py:104] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:49:28,802 - INFO - [_async_transport.py:294] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:N/A duration:2.278s]
+2026-07-18 11:49:28,803 - WARNING - [_node_pool.py:249] - Node <AiohttpHttpNode(http://elasticsearch:9200)> has failed for 1 times in a row, putting on 1 second timeout
+2026-07-18 11:49:28,803 - WARNING - [_async_transport.py:337] - Retrying request after failure (attempt 0 of 3)
+Traceback (most recent call last):
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_async_transport.py", line 264, in perform_request
+    resp = await node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_node\_http_aiohttp.py", line 227, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClientConnectorDNSError(Cannot connect to host elasticsearch:9200 ssl:default [getaddrinfo failed])
+2026-07-18 11:49:31,071 - INFO - [_async_transport.py:294] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:N/A duration:2.266s]
+2026-07-18 11:49:31,072 - WARNING - [_node_pool.py:249] - Node <AiohttpHttpNode(http://elasticsearch:9200)> has failed for 2 times in a row, putting on 2 second timeout
+2026-07-18 11:49:31,072 - WARNING - [_async_transport.py:337] - Retrying request after failure (attempt 1 of 3)
+Traceback (most recent call last):
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_async_transport.py", line 264, in perform_request
+    resp = await node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_node\_http_aiohttp.py", line 227, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClientConnectorDNSError(Cannot connect to host elasticsearch:9200 ssl:default [getaddrinfo failed])
+2026-07-18 11:49:31,073 - INFO - [_node_pool.py:310] - Resurrected node <AiohttpHttpNode(http://elasticsearch:9200)> (force=False)
+2026-07-18 11:49:33,360 - INFO - [_async_transport.py:294] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:N/A duration:2.286s]
+2026-07-18 11:49:33,360 - WARNING - [_node_pool.py:249] - Node <AiohttpHttpNode(http://elasticsearch:9200)> has failed for 3 times in a row, putting on 4 second timeout
+2026-07-18 11:49:33,360 - WARNING - [_async_transport.py:337] - Retrying request after failure (attempt 2 of 3)
+Traceback (most recent call last):
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_async_transport.py", line 264, in perform_request
+    resp = await node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_node\_http_aiohttp.py", line 227, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClientConnectorDNSError(Cannot connect to host elasticsearch:9200 ssl:default [getaddrinfo failed])
+2026-07-18 11:49:33,361 - INFO - [_node_pool.py:310] - Resurrected node <AiohttpHttpNode(http://elasticsearch:9200)> (force=False)
+2026-07-18 11:49:35,641 - INFO - [_async_transport.py:294] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:N/A duration:2.280s]
+2026-07-18 11:49:35,641 - WARNING - [_node_pool.py:249] - Node <AiohttpHttpNode(http://elasticsearch:9200)> has failed for 4 times in a row, putting on 8 second timeout
+2026-07-18 11:49:35,641 - ERROR - [logs_settings.py:52] - Erro ao enviar log para o Elasticsearch: Connection error caused by: ConnectionError(Connection error caused by: ClientConnectorDNSError(Cannot connect to host elasticsearch:9200 ssl:default [getaddrinfo failed]))
+2026-07-18 11:49:35,642 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:49:38,350 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:49:38,352 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:49:38,377 - ERROR - [buscar_pokemon.py:104] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:49:38,378 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/99999 "HTTP/1.1 404 Not Found"
+2026-07-18 11:49:38,403 - ERROR - [buscar_pokemon.py:104] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:49:38,806 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 11:50:09,087 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:50:09,088 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:50:09,114 - ERROR - [buscar_pokemon.py:104] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:50:09,115 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/99999 "HTTP/1.1 404 Not Found"
+2026-07-18 11:50:09,139 - ERROR - [buscar_pokemon.py:104] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:50:09,392 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 11:51:24,214 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:51:24,216 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:51:24,241 - ERROR - [buscar_pokemon.py:104] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:51:24,242 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/99999 "HTTP/1.1 404 Not Found"
+2026-07-18 11:51:24,269 - ERROR - [buscar_pokemon.py:104] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:51:26,556 - INFO - [_async_transport.py:294] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:N/A duration:2.286s]
+2026-07-18 11:51:26,556 - WARNING - [_node_pool.py:249] - Node <AiohttpHttpNode(http://elasticsearch:9200)> has failed for 1 times in a row, putting on 1 second timeout
+2026-07-18 11:51:26,556 - WARNING - [_async_transport.py:337] - Retrying request after failure (attempt 0 of 3)
+Traceback (most recent call last):
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_async_transport.py", line 264, in perform_request
+    resp = await node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_node\_http_aiohttp.py", line 227, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClientConnectorDNSError(Cannot connect to host elasticsearch:9200 ssl:default [getaddrinfo failed])
+2026-07-18 11:51:28,829 - INFO - [_async_transport.py:294] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:N/A duration:2.271s]
+2026-07-18 11:51:28,829 - WARNING - [_node_pool.py:249] - Node <AiohttpHttpNode(http://elasticsearch:9200)> has failed for 2 times in a row, putting on 2 second timeout
+2026-07-18 11:51:28,829 - WARNING - [_async_transport.py:337] - Retrying request after failure (attempt 1 of 3)
+Traceback (most recent call last):
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_async_transport.py", line 264, in perform_request
+    resp = await node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_node\_http_aiohttp.py", line 227, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClientConnectorDNSError(Cannot connect to host elasticsearch:9200 ssl:default [getaddrinfo failed])
+2026-07-18 11:51:28,830 - INFO - [_node_pool.py:310] - Resurrected node <AiohttpHttpNode(http://elasticsearch:9200)> (force=False)
+2026-07-18 11:51:31,111 - INFO - [_async_transport.py:294] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:N/A duration:2.280s]
+2026-07-18 11:51:31,111 - WARNING - [_node_pool.py:249] - Node <AiohttpHttpNode(http://elasticsearch:9200)> has failed for 3 times in a row, putting on 4 second timeout
+2026-07-18 11:51:31,111 - WARNING - [_async_transport.py:337] - Retrying request after failure (attempt 2 of 3)
+Traceback (most recent call last):
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_async_transport.py", line 264, in perform_request
+    resp = await node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Projetos\projeto_final_ebac_pokeapi\pokeapi\.venv\Lib\site-packages\elastic_transport\_node\_http_aiohttp.py", line 227, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClientConnectorDNSError(Cannot connect to host elasticsearch:9200 ssl:default [getaddrinfo failed])
+2026-07-18 11:51:31,112 - INFO - [_node_pool.py:310] - Resurrected node <AiohttpHttpNode(http://elasticsearch:9200)> (force=False)
+2026-07-18 11:51:33,391 - INFO - [_async_transport.py:294] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:N/A duration:2.280s]
+2026-07-18 11:51:33,392 - WARNING - [_node_pool.py:249] - Node <AiohttpHttpNode(http://elasticsearch:9200)> has failed for 4 times in a row, putting on 8 second timeout
+2026-07-18 11:51:33,392 - ERROR - [logs_settings.py:52] - Erro ao enviar log para o Elasticsearch: Connection error caused by: ConnectionError(Connection error caused by: ClientConnectorDNSError(Cannot connect to host elasticsearch:9200 ssl:default [getaddrinfo failed]))
+2026-07-18 11:51:33,393 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:52:06,815 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:52:06,816 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons?offset=0&limit=1 "HTTP/1.1 502 Bad Gateway"
+2026-07-18 11:52:06,842 - ERROR - [buscar_pokemon.py:104] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:52:06,843 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/99999 "HTTP/1.1 404 Not Found"
+2026-07-18 11:52:06,869 - ERROR - [buscar_pokemon.py:104] - Erro ao se conectar com o redis: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2026-07-18 11:52:06,870 - INFO - [_client.py:1090] - HTTP Request: GET http://testserver/pokemons/1 "HTTP/1.1 502 Bad Gateway"
