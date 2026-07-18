@@ -30,6 +30,7 @@ jobs:
         run: poetry install --no-interaction --no-root
 
       - name: Executar teste
+        working-directory: ./pokeapi
         env:
           PYTHONPATH: ${{ github.workspace }}/pokeapi/src
         run: poetry run pytest
