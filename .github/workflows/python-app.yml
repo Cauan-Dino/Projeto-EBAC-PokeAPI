@@ -30,6 +30,7 @@ jobs:
         run: poetry install --no-interaction --no-root
 
       - name: Executar teste
+        working-directory: ./pokeapi
         run: poetry run pytest
 
   docker-build:
