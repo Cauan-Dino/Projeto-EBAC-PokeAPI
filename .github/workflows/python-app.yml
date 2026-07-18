@@ -92,7 +92,7 @@ jobs:
             -e REDIS_URL="redis://localhost:6379/0" \
             fastapi-app:latest
 
-          sleep(5)
+          sleep 5
 
           podman logs pokeapi-container
 
