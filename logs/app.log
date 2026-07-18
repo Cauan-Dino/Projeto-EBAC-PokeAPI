@@ -1,0 +1,69 @@
+2026-07-15 18:02:17,161 - INFO - [_client.py:1740] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-15 18:02:19,403 - INFO - [buscar_pokemon.py:77] - Retornando no cache
+2026-07-15 18:02:31,464 - INFO - [buscar_pokemon.py:77] - Retornando no cache
+2026-07-15 18:02:36,409 - INFO - [_client.py:1740] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-15 18:02:47,049 - INFO - [_client.py:1740] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-15 18:04:13,970 - INFO - [_client.py:1740] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-15 18:04:26,229 - INFO - [_client.py:1740] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/2/ "HTTP/1.1 200 OK"
+2026-07-15 18:22:53,091 - INFO - [_client.py:1740] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-15 18:24:37,764 - INFO - [_client.py:1740] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-15 18:24:49,454 - INFO - [_client.py:1740] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/6/ "HTTP/1.1 200 OK"
+2026-07-15 18:24:50,043 - INFO - [buscar_pokemon.py:77] - Retornando no cache
+2026-07-15 19:20:59,283 - INFO - [_async_transport.py:300] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:400 duration:0.005s]
+2026-07-15 19:20:59,284 - ERROR - [logs_settings.py:48] - Erro ao enviar log para o Elasticsearch: BadRequestError(400, 'media_type_header_exception', 'Invalid media-type value on headers [Accept, Content-Type]', Accept version must be either version 8 or 7, but found 9. Accept=application/vnd.elasticsearch+json; compatible-with=9)
+2026-07-15 19:20:59,617 - INFO - [_client.py:1740] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-15 20:13:50,536 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.116s]
+2026-07-15 20:13:50,931 - INFO - [_client.py:1740] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 15:42:21,810 - INFO - [_client.py:1740] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/2/ "HTTP/1.1 200 OK"
+2026-07-17 15:42:22,458 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.642s]
+2026-07-17 15:42:24,768 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.176s]
+2026-07-17 15:42:25,640 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.017s]
+2026-07-17 15:42:26,369 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.007s]
+2026-07-17 15:42:40,192 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.016s]
+2026-07-17 15:43:14,033 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.044s]
+2026-07-17 15:43:14,704 - INFO - [_client.py:1740] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 15:43:25,054 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.021s]
+2026-07-17 15:43:25,305 - INFO - [_client.py:1740] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 15:43:37,907 - INFO - [_client.py:1740] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/5/ "HTTP/1.1 200 OK"
+2026-07-17 15:43:37,921 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-17 15:58:42,474 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.184s]
+2026-07-17 15:58:42,772 - INFO - [_client.py:1740] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-17 15:58:51,343 - INFO - [_client.py:1740] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/2/ "HTTP/1.1 200 OK"
+2026-07-17 15:58:51,357 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-17 15:58:53,520 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-18 13:58:57,130 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: Error 111 connecting to localhost:6379. Connection refused.
+2026-07-18 13:58:57,535 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 13:58:57,539 - ERROR - [buscar_pokemon.py:50] - Erro ao conectar com a PokeAPI: Error 111 connecting to localhost:6379. Connection refused.
+2026-07-18 13:58:57,554 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.014s]
+2026-07-18 13:59:06,003 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: Error 111 connecting to localhost:6379. Connection refused.
+2026-07-18 13:59:06,330 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 13:59:06,333 - ERROR - [buscar_pokemon.py:50] - Erro ao conectar com a PokeAPI: Error 111 connecting to localhost:6379. Connection refused.
+2026-07-18 13:59:06,339 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-18 13:59:17,589 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: Error 111 connecting to localhost:6379. Connection refused.
+2026-07-18 13:59:17,844 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 13:59:17,847 - ERROR - [buscar_pokemon.py:50] - Erro ao conectar com a PokeAPI: Error 111 connecting to localhost:6379. Connection refused.
+2026-07-18 13:59:17,863 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.015s]
+2026-07-18 13:59:18,524 - ERROR - [buscar_pokemon.py:78] - Erro ao se conectar com o redis: Error 111 connecting to localhost:6379. Connection refused.
+2026-07-18 13:59:18,774 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 13:59:18,777 - ERROR - [buscar_pokemon.py:50] - Erro ao conectar com a PokeAPI: Error 111 connecting to localhost:6379. Connection refused.
+2026-07-18 13:59:18,783 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-18 13:59:22,711 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 13:59:22,721 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-18 13:59:27,714 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 13:59:27,722 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-18 13:59:33,669 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 13:59:33,681 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.004s]
+2026-07-18 13:59:39,229 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/99999/ "HTTP/1.1 404 Not Found"
+2026-07-18 14:02:08,199 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/99999/ "HTTP/1.1 404 Not Found"
+2026-07-18 14:02:08,209 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-18 14:02:09,845 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-18 14:02:10,581 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-18 18:18:20,268 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 18:18:20,280 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.009s]
+2026-07-18 18:18:22,105 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-18 18:18:22,114 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-18 18:18:25,932 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-18 18:18:25,943 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-18 18:18:26,846 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-18 18:18:30,897 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1333/ "HTTP/1.1 404 Not Found"
+2026-07-18 18:18:30,904 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
