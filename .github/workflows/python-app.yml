@@ -70,7 +70,7 @@ jobs:
         ports:
           - 5601:5601
         env:
-          ELASTICSEARCH_HOST: http://localhost:9200
+          ELASTICSEARCH_HOSTS: http://localhost:9200
 
     steps:
       - name: Copiar o Repositório pro Container
