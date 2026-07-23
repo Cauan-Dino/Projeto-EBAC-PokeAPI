@@ -268,7 +268,7 @@ async def alterar_caracteristicas_pokemon(
                 detail='Esse nome já existe no banco de dados!'
             )
 
-        id_do_pokemon_cadastrado = db.query(CadastroPokemon.pokemon_id == pokemon_id).first()    
+        id_do_pokemon_cadastrado = db.query(CadastroPokemon).filter(CadastroPokemon.pokemon_id == pokemon_id).first()    
         if id_do_pokemon_cadastrado:
             pokemon_atualizado = await atualizar_pokemon_no_banco_de_dados(
                 pokemon_id=pokemon_id,
