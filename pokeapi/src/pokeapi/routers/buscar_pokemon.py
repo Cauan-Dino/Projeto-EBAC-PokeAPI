@@ -13,7 +13,7 @@ router = APIRouter(tags=['Buscar pokémon'])
 
 
 # Busca todos os pokémons
-@router.get('/pokemons')
+@router.get('/pokemonsss')
 async def buscar_todos_pokemons(
     request: Request,
     limit: int = 20,
