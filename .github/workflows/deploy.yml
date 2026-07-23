@@ -1,0 +1,69 @@
+name: CI/CD Pipeline - Deploy PokeAPI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  # -------------------------------------------------------------
+  # JOB 1: Testes e Validação do Container
+  # -------------------------------------------------------------
+  test-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Copiar todo Código do Repositório
+        uses: actions/checkout@v5
+      
+      - name: Criar .env temporário
+        run: |
+          echo "REDIS_PORT=6379" > .env
+          echo "KIBANA_PORT=5601" >> .env
+          echo "ES_HOST=elasticsearch" >> .env
+          echo "ES_PORT=9200" >> .env
+          echo "URL_DB=sqlite:///pokeapi.db" >> .env
+          echo "REDIS_HOST=redis" >> .env
+
+      - name: Buildar e Subir Container de Teste
+        run: |
+          docker compose up --build -d app
+          sleep 10
+          docker compose logs
+
+      - name: Verificar se o Container ainda está de Pé
+        run: docker compose ps | grep Up
+
+      - name: Testar Endpoint da API
+        run: curl --fail http://localhost:8000/docs || exit 1
+
+      - name: Exibir Logs em caso de Falha
+        if: failure()
+        run: docker compose logs
+
+      - name: Limpar Container de Teste
+        if: always()
+        run: docker compose down
+  # -------------------------------------------------------------
+  # JOB 2: Deploy Automático no Servidor de Produção (Ex: VPS/EC2)
+  # -------------------------------------------------------------
+  deploy:
+    needs: test-and-build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    steps:
+      - name: Disparar Deploy no Render
+        run: |
+          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+          
+          
+          
+    
+          
+
+          
+
+      
+    
