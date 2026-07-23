@@ -62,16 +62,18 @@ async def verificar_mudanca_de_pokemons_pokeapi_e_salva_no_cache(
         raise HTTPException(status_code=503, detail='Erro ao conectar com a PokeAPI!')
     
     finally:
-        # Registra no log o erro ocorrido ao fazer a requisição no endpoint PokeAPI 
-        await registrar_log_de_buscar_pokemon( 
-        offset=offset, 
-        limit=limit, 
-        origem=log_origem, 
-        endpoint=log_url_endpoint, 
-        status=log_status,
-        motivo=log_motivo
-        )
-
+        try:
+            await registrar_log_de_buscar_pokemon(
+            offset=None,
+            limit=None,
+            origem=log_origem,
+            motivo=log_motivo,
+            endpoint=log_url_endpoint,
+            status=log_status
+            )
+        except Exception as e:
+            # Captura o erro se o Elasticsearch não estiver acessível,
+            print(f"[AVISO] Elasticsearch offline/indisponível: {e}")
 
 
 
@@ -90,15 +92,6 @@ async def buscar_pokemon_na_pokeapi(
     
     except Exception as e: 
         logger.error(f'Erro ao conectar com a PokeAPI: {e}')    
-        await registrar_log_de_buscar_pokemon(
-            offset=None, 
-            limit=None, 
-            endpoint=f'https://pokeapi.co/api/v2/pokemon/{paramentro_de_buscar}',
-            motivo=e,
-            origem=f'endpoint:https://pokeapi.co/api/v2/pokemon/{paramentro_de_buscar}',
-            status='error'
-        )
-
 
 
 # Função que atualiza o pokémon no banco de dados

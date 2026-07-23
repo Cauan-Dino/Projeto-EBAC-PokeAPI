@@ -63,14 +63,19 @@ async def buscar_todos_pokemons(
         raise HTTPException(status_code=500, detail="Erro interno no servidor")
 
     finally:
-        await registrar_log_de_buscar_pokemon(
-        limit=limit,
-        offset=offset,
-        motivo=log_motivo,
-        origem=log_origem,
-        endpoint=log_url_endpoint,
-        status=log_status
-        )
+        try:
+            await registrar_log_de_buscar_pokemon(
+            offset=None,
+            limit=None,
+            origem=log_origem,
+            motivo=log_motivo,
+            endpoint=log_url_endpoint,
+            status=log_status
+            )
+        except Exception as e:
+            # Captura o erro se o Elasticsearch não estiver acessível,
+            print(f"[AVISO] Elasticsearch offline/indisponível: {e}")
+
     
 
 
@@ -188,15 +193,19 @@ async def buscar_pokemon_especifico(
         raise HTTPException(status_code=500, detail="Erro interno no servidor")
 
     finally:
-        # Registra no log que a requisição foi um sucesso e foi via json do endpoint da PokeAPI 
-        await registrar_log_de_buscar_pokemon(
-        offset=None,
-        limit=None,
-        origem=log_origem,
-        motivo=log_motivo,
-        endpoint=log_url_endpoint,
-        status=log_status
-        )
+        try:
+            await registrar_log_de_buscar_pokemon(
+            offset=None,
+            limit=None,
+            origem=log_origem,
+            motivo=log_motivo,
+            endpoint=log_url_endpoint,
+            status=log_status
+            )
+        except Exception as e:
+            # Captura o erro se o Elasticsearch não estiver acessível,
+            print(f"[AVISO] Elasticsearch offline/indisponível: {e}")
+
 
 
 
