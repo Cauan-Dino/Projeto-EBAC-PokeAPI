@@ -17,6 +17,13 @@ Todas as ações geram logs estruturados enviados para o Elasticsearch, permitin
 
 ---
 
+## Link
+
+- `https://projeto-ebac-pokeapi.onrender.com/docs` -> Documentação Swagger
+- `https://projeto-ebac-pokeapi.onrender.com` -> Link da API
+
+---
+
 ### Principais tecnologias
 
 - **FastAPI** — framework da API
