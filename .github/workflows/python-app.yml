@@ -38,64 +38,27 @@ jobs:
   docker-build:
     runs-on: ubuntu-latest
     needs: fastapi-tests
-      
-    services:
-      redis:
-        image: redis:7-alpine
-        ports:
-          - 6379:6379
-        options: >-
-          --health-cmd "redis-cli ping"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
-      elasticsearch:
-        image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
-        ports:
-          - 9200:9200
-        env:
-          discovery.type: "single-node"
-          bootstrap.memory_lock: "true"
-          xpack.security.enabled: "false"
-          ES_JAVA_OPTS: "-Xms512m -Xmx512m"
-        options: >-
-          --health-cmd "curl -f http://localhost:9200/_cluster/health || exit 1"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
-      kibana:
-        image: docker.elastic.co/kibana/kibana:8.11.0
-        ports:
-          - 5601:5601
-        env:
-          ELASTICSEARCH_HOSTS: http://elasticsearch:9200
 
     steps:
       - name: Copiar o Repositório pro Container
         uses: actions/checkout@v4
 
-      - name: Buildar Container
-        run: docker build -t fastapi-app:latest .
-
-      - name: Subir Container
+      - name: Buildar e Subir Container
         run: |
           docker compose up -d --build app
-          sleep 5
+          sleep 10
           docker compose logs app
-          
 
       - name: Verificar se o Container ainda está de Pé
-        run: docker ps | grep pokeapi-container | grep Up
+        run: docker compose ps | grep Up
 
       - name: Fazer Requisição na API
         run: curl --fail http://localhost:8000/docs || exit 1
 
       - name: Listar logs Se FALHAR
         if: failure()
-        run: docker logs pokeapi-container
+        run: docker compose logs
       
       - name: Limpar o Container
         if: always()
-        run: docker rm -f pokeapi-container      
+        run: docker compose down    
