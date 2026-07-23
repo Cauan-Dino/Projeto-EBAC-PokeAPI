@@ -10,3 +10,6 @@ __pycache__/
 
 # Variáveis de ambiente
 .env
+
+# Logs
+pokeapi/src/pokeapi/log/logs/

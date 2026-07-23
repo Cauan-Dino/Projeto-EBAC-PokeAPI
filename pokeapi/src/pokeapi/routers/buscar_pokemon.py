@@ -1,90 +1,76 @@
-from fastapi import APIRouter, HTTPException, BackgroundTasks
+from fastapi import APIRouter, HTTPException, Depends, Request
 from pokeapi.services.redis_cache.redis_config import redis_client
 import json
 import httpx2
 from pokeapi.log.logs_settings import registrar_log_de_buscar_pokemon, logger
-
+from pokeapi.services.database.criacao_database import sessao_db
+from sqlalchemy.orm import Session
+from pokeapi.services.database.models import ExclusaoPokemon, CadastroPokemon
+from pokeapi.services.pokemon_service.requisicao_pokeapi import verificar_mudanca_de_pokemons_pokeapi_e_salva_no_cache
 
 router = APIRouter(tags=['Buscar pokémon'])
-
-
-
-# Verifica se a foi adicionado algum novo pokémon na PokeAPI
-async def verificar_mudanca_pokemons_pokeapi(url: str, limit: int, offset: int, paramentro_origem_da_funcao_log: str | None = None):
-    try:
-        
-        async with httpx2.AsyncClient() as client: # Abre uma conexão com a url e fecha automaticamente a conexão
-            response = await client.get(url) # Realiza requisição no endpoint da PokeAPI colocando em background
-            
-            if response.status_code == 200: 
-                response_json = response.json()
-                
-                # Adiciona a paginação no redis
-                paginacao = {
-                    'data': response_json['results'],
-                    'pagination': {
-                        'limit': limit,
-                        'offset': offset,
-                        'next': response_json['next'],
-                        'previous': response_json['previous'],
-                        'count': response_json['count']
-                    }
-                }
-
-                # Salva no redis a paginação
-                redis_client.set(name=url, value=json.dumps(paginacao), ex=900)
-               
-                # Registra no Elasticsearch que a requisição foi um Sucesso
-                await registrar_log_de_buscar_pokemon(credencias=None, offset=offset, limit=limit, origem=paramentro_origem_da_funcao_log, endpoint=url, status='success') 
-               
-                return paginacao 
-            
-            if response.status_code != 200:
-                await registrar_log_de_buscar_pokemon(credencias=None, offset=offset, limit=limit, origem='requisição', endpoint=url, status='failed')
-                raise HTTPException(status_code=502, detail='Erro ao consultar a PokeAPI!')
-    
-    except HTTPException:
-        raise 
-
-    except Exception as e:
-        logger.error(f'Erro ao conectar com a PokeAPI: {e}') # Envia pro app.log o ERROR 
-        # Registra no log o erro ocorrido ao fazer a requisição no endpoint PokeAPI
-        await registrar_log_de_buscar_pokemon(credencias=None, offset=offset, limit=limit, origem=paramentro_origem_da_funcao_log, endpoint=url, status='failed') 
-        raise HTTPException(status_code=503, detail='Erro ao conectar com a PokeAPI!')
-
-
 
 
 
 # Busca todos os pokémons
 @router.get('/pokemons')
 async def buscar_todos_pokemons(
-    background: BackgroundTasks,
+    request: Request,
     limit: int = 20,
-    offset: int = 0 
+    offset: int = 0
     ):
-    if limit < 1 or offset < 0:
-        raise HTTPException(
-            status_code=400,
-            detail='Limit ou offset inválidos!'
-        )
+    # Log que será enviado pro Elasticsearch caso retorne 200. Se não serão outros valores
+    log_status = 'success'
+    log_motivo = 'Pokémons retornados com sucesso'
+    log_url_endpoint = f'{request.method} {request.url.path}' 
+    log_origem = f'endpoint:/pokemons'
 
-    key = f'https://pokeapi.co/api/v2/pokemon/?offset={offset}&limit={limit}' # Chave do redis
-    
-    # Tratamento de erro conexão com o Redis
     try:
-        cache = redis_client.get(key) # Pega o valor da chave do redis
-    except Exception as e:
-        logger.error(f'Erro ao se conectar com o redis: {e}')
-        cache = None
+        if limit < 1 or offset < 0:
+            log_motivo = 'Limite abaixo de 1 ou offset abaixo de 0'
+            log_status = 'failed'
 
-    # Retorna o cache se existir
-    if cache:
-        background.add_task(verificar_mudanca_pokemons_pokeapi,key,limit,offset,'cache') # Adiciona em background o cache
-        return json.loads(cache)
+            raise HTTPException(
+                status_code=400,
+                detail='Limit ou offset inválidos!'
+            )
+
+        key = f'https://pokeapi.co/api/v2/pokemon/?offset={offset}&limit={limit}' # Chave do redis
+        
+        try:
+            cache = redis_client.get(key) # Pega o valor da chave do redis
+        except Exception as e:
+            logger.error(f'Erro ao se conectar com o redis: {e}')
+            cache = None
+        
+        if cache:
+            log_motivo = 'Pokémons retornados com sucesso via redis'
+            log_origem = 'cache'
+            
+            return json.loads(cache)
+        
+        # Retorna a paginação caso não exista no redis
+        return await verificar_mudanca_de_pokemons_pokeapi_e_salva_no_cache(request=request, url=key, limit=limit, offset=offset)
     
-    # Retorna a paginação caso não exista no redis
-    return await verificar_mudanca_pokemons_pokeapi(url=key, limit=limit, offset=offset, paramentro_origem_da_funcao_log='requisição')
+    except HTTPException:
+        # Captura apenas Erros HTTPException do FastAPI
+        raise 
+
+    except Exception as e:
+        # Captura erros não previstos como (KeyError, ZeroDivisionError, etc)
+        log_status = 'error'
+        log_motivo = f'Ocorreu um erro: {e}'
+        raise HTTPException(status_code=500, detail="Erro interno no servidor")
+
+    finally:
+        await registrar_log_de_buscar_pokemon(
+        limit=limit,
+        offset=offset,
+        motivo=log_motivo,
+        origem=log_origem,
+        endpoint=log_url_endpoint,
+        status=log_status
+        )
     
 
 
@@ -93,62 +79,124 @@ async def buscar_todos_pokemons(
 # Busca um pokémon específico
 @router.get('/pokemons/{pokemon_id}')
 async def buscar_pokemon_especifico(
-    pokemon_id: int
+    pokemon_id: int,
+    request: Request,
+    db: Session = Depends(sessao_db)
     ):
     URL = f'https://pokeapi.co/api/v2/pokemon/{pokemon_id}/'
+    
+    # Log que será enviado pro Elasticsearch caso retorne 200. Se não serão outros valores
+    log_status = 'success'
+    log_motivo = 'Pokémon retornado com sucesso'
+    log_url_endpoint = f'{request.method} {request.url.path}' 
+    log_origem = f'endpoint:/pokemons/{pokemon_id}'
 
-    # Tratamento de erro conexão com o Redis
     try:
-        cache = redis_client.get(URL)
-    except Exception as e:
-        logger.error(f'Erro ao se conectar com o redis: {e}')
-        cache = None
+        # Se a query for TRUE, o pokémon está excluido
+        pokemon_esta_excluido = db.query(ExclusaoPokemon).filter(ExclusaoPokemon.pokemon_id == pokemon_id).first()
+        if pokemon_esta_excluido:
+            log_status = 'failed'
+            log_origem = 'banco de dados:query no banco de dados'
+            log_motivo = 'pokémon já está excluido'
 
-    if cache:
-        await registrar_log_de_buscar_pokemon(credencias=None, offset=None, limit= None, origem='cache', endpoint=URL, status='success')
-        return json.loads(cache)
-    
-    # Requisita na URL da PokeAPI
-    async with httpx2.AsyncClient() as client:
+            raise HTTPException(
+                status_code=400,
+                detail='Pokémon está excluido!'
+            )
+
         try:
-            response = await client.get(url=URL)
-        except httpx2.RequestError as e:
-            logger.error(f'Erro ao conectar com a PokeAPI: {e}') # Envia log de ERROR pro app.log
-            await registrar_log_de_buscar_pokemon(credencias=None, offset=None, limit=None, origem='requisição', endpoint=URL, status='failed') # Envia log pro Elasticsearch
-            raise HTTPException(status_code=503, detail='PokeAPI indisponível no momento!')
-    
-        # Verifica se o pokemon existe
-        if response.status_code == 404:
-            await registrar_log_de_buscar_pokemon(credencias=None, offset=None, limit=None, origem='requisição', endpoint=URL, status='failed')
-            raise HTTPException(status_code=404,detail=f'Pokémon com id {pokemon_id} não encontrado')
+            cache = redis_client.get(URL)
+        except Exception as e:
+            logger.error(f'Erro ao se conectar com o redis: {e}')
+            cache = None
+
+        if cache:
+            log_status = 'success'
+            log_motivo = 'Pokémon retornado com sucesso via cache'
+            log_origem = 'cache'
+            return json.loads(cache)
         
-        # Verifica se api responde corretamente
-        if response.status_code != 200:
-            await registrar_log_de_buscar_pokemon(credencias=None, offset=None, limit= None, origem='requisição', endpoint=URL, status='failed')
-            raise HTTPException(status_code=502, detail='Erro ao consultar a PokeAPI!')
-    
+        
+        # Se a query for TRUE, o pokémon existe no Banco de Dados (RETORNA VIA BANCO DE DADOS)
+        pokemon_existe_no_db = db.query(CadastroPokemon).filter(CadastroPokemon.pokemon_id == pokemon_id).first()
+        if pokemon_existe_no_db:
+            log_motivo = 'pokémon existe no banco de dados'
+            log_origem = 'banco de dados:query no banco de dados'
+
+            return pokemon_existe_no_db
+        
+
+        # ------ Requisição na URL da PokeAPI ----------------------
+        
+        async with httpx2.AsyncClient() as client:
+            try:
+                response = await client.get(url=URL)
+            except httpx2.RequestError as e:
+                logger.error(f'Erro ao conectar com a PokeAPI: {e}') # Envia log de ERROR pro app.log
+                
+                log_status = 'failed'
+                log_motivo = f'Erro ao tentar se conectar com a PokeAPI: {e}'
+                log_url_origem = f'endpoint:{URL}'
+
+                raise HTTPException(status_code=503, detail='PokeAPI indisponível no momento!')
+        
+            if response.status_code == 404:
+                log_status = 'failed'
+                log_motivo = f'Pokémon {pokemon_id} não existe'
+                log_url_origem = f'endpoint:{URL}'
+                
+                raise HTTPException(status_code=404,detail=f'Pokémon com id {pokemon_id} não encontrado')
+            
+            if response.status_code != 200:
+                log_status = 'failed'
+                log_motivo = f'Erro ao tentar se conectar com a PokeAPI: {response.status_code}'
+                log_url_origem = f'endpoint:{URL}'
+
+                raise HTTPException(status_code=502, detail='Erro ao consultar a PokeAPI!')
+        
         response_json = response.json() # Pega o json da requisição do endpoint
         
+        # ----------------------------------------------------------
 
-    formatacao = {
-        'name': response_json['forms'][0]['name'],
-        'id': response_json['id'],
-        'height': response_json['height'],
-        'weight': response_json['weight'],
-        'types': [
-            i['type']['name'] for i in response_json['types']
-        ],
-        'sprites': {
-            'front_default': response_json['sprites']['front_default'],
-            'back_default': response_json['sprites']['back_default']
+        formatacao = {
+            'name': response_json['forms'][0]['name'],
+            'id': response_json['id'],
+            'height': response_json['height'],
+            'weight': response_json['weight'],
+            'types': [
+                i['type']['name'] for i in response_json['types']
+            ],
+            'sprites': {
+                'front_default': response_json['sprites']['front_default'],
+                'back_default': response_json['sprites']['back_default']
+            }
+            
         }
-        
-    }
 
-    redis_client.set(name=URL,value=json.dumps(formatacao),ex=3600) # Salva no redis formatação
+        redis_client.set(name=URL,value=json.dumps(formatacao),ex=3600) # Salva no redis formatação
 
-    # Registra no log que a requisição foi um sucesso e foi via json do endpoint da PokeAPI 
-    await registrar_log_de_buscar_pokemon(credencias=None, offset=None, limit= None, origem='requisição', endpoint=URL, status='success')
+        return formatacao
+    
+    except HTTPException:
+        # Captura as HTTPException do fastapi
+        raise 
 
-    return formatacao
+    except Exception as e:
+        # Captura apenas bugs não previsto (KeyError, ZeroDivisionError, etc)
+        log_motivo = f'Ocorreu um erro: {e}'
+        log_status = 'error'
+        raise HTTPException(status_code=500, detail="Erro interno no servidor")
+
+    finally:
+        # Registra no log que a requisição foi um sucesso e foi via json do endpoint da PokeAPI 
+        await registrar_log_de_buscar_pokemon(
+        offset=None,
+        limit=None,
+        origem=log_origem,
+        motivo=log_motivo,
+        endpoint=log_url_endpoint,
+        status=log_status
+        )
+
+
 

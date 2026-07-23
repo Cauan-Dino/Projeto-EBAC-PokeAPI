@@ -67,3 +67,295 @@
 2026-07-18 18:18:26,846 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
 2026-07-18 18:18:30,897 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1333/ "HTTP/1.1 404 Not Found"
 2026-07-18 18:18:30,904 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-19 14:06:33,150 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-19 14:06:33,166 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.012s]
+2026-07-19 14:06:35,123 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-19 14:06:35,139 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.013s]
+2026-07-19 14:06:40,735 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-19 14:06:40,754 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.015s]
+2026-07-19 14:09:40,917 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-19 14:09:40,933 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.012s]
+2026-07-19 22:23:39,267 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1 "HTTP/1.1 200 OK"
+2026-07-19 22:25:38,892 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/2/ "HTTP/1.1 200 OK"
+2026-07-19 22:25:38,918 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.020s]
+2026-07-19 22:47:29,390 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/string "HTTP/1.1 404 Not Found"
+2026-07-20 00:58:54,994 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/pikachu "HTTP/1.1 200 OK"
+2026-07-20 01:00:10,255 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/tatu "HTTP/1.1 404 Not Found"
+2026-07-20 01:00:33,664 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/tatu "HTTP/1.1 404 Not Found"
+2026-07-20 01:00:53,310 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/www "HTTP/1.1 404 Not Found"
+2026-07-20 01:01:04,058 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/wwww "HTTP/1.1 404 Not Found"
+2026-07-20 01:01:06,127 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/wwww "HTTP/1.1 404 Not Found"
+2026-07-20 01:02:05,526 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/wwww "HTTP/1.1 404 Not Found"
+2026-07-20 01:50:48,930 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/string "HTTP/1.1 404 Not Found"
+2026-07-20 01:50:54,623 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/strwing "HTTP/1.1 404 Not Found"
+2026-07-20 01:51:55,802 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/strwdwadading "HTTP/1.1 404 Not Found"
+2026-07-20 02:01:03,091 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/strwdwadading "HTTP/1.1 404 Not Found"
+2026-07-20 02:01:23,397 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/strwdwadading "HTTP/1.1 404 Not Found"
+2026-07-20 02:03:14,721 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/strwdwadading "HTTP/1.1 404 Not Found"
+2026-07-20 02:03:19,116 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/strswdwadading "HTTP/1.1 404 Not Found"
+2026-07-20 02:04:04,356 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/strswdwadading "HTTP/1.1 404 Not Found"
+2026-07-20 02:04:26,240 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/strswdwadading "HTTP/1.1 404 Not Found"
+2026-07-20 02:06:07,690 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/strswdwadading "HTTP/1.1 404 Not Found"
+2026-07-20 02:07:00,763 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/strswdwadading "HTTP/1.1 404 Not Found"
+2026-07-20 02:07:01,798 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/strswdwadading "HTTP/1.1 404 Not Found"
+2026-07-20 02:07:08,593 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/strswdwadading "HTTP/1.1 404 Not Found"
+2026-07-20 02:07:08,820 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/ "HTTP/1.1 200 OK"
+2026-07-20 02:07:19,387 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/strswwdwadading "HTTP/1.1 404 Not Found"
+2026-07-20 02:14:13,889 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1 "HTTP/1.1 200 OK"
+2026-07-20 02:14:30,931 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1352 "HTTP/1.1 404 Not Found"
+2026-07-20 02:22:43,185 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1352 "HTTP/1.1 404 Not Found"
+2026-07-20 02:23:19,410 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1353 "HTTP/1.1 404 Not Found"
+2026-07-20 02:23:39,357 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1353 "HTTP/1.1 404 Not Found"
+2026-07-20 02:23:40,837 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1353 "HTTP/1.1 404 Not Found"
+2026-07-20 02:24:09,311 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1353 "HTTP/1.1 404 Not Found"
+2026-07-20 02:24:16,290 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1353 "HTTP/1.1 404 Not Found"
+2026-07-20 02:24:27,445 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1353 "HTTP/1.1 404 Not Found"
+2026-07-20 02:30:49,778 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1353 "HTTP/1.1 404 Not Found"
+2026-07-20 11:53:15,646 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/2/ "HTTP/1.1 200 OK"
+2026-07-20 11:53:15,661 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.008s]
+2026-07-20 11:53:17,237 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.007s]
+2026-07-20 11:53:24,380 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1352/ "HTTP/1.1 404 Not Found"
+2026-07-20 11:53:53,768 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1353/ "HTTP/1.1 404 Not Found"
+2026-07-20 11:54:37,089 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/string "HTTP/1.1 404 Not Found"
+2026-07-20 11:54:39,468 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/string "HTTP/1.1 404 Not Found"
+2026-07-20 11:54:54,492 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1354/ "HTTP/1.1 404 Not Found"
+2026-07-20 11:55:50,793 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1354/ "HTTP/1.1 404 Not Found"
+2026-07-20 12:06:38,158 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1354/ "HTTP/1.1 404 Not Found"
+2026-07-20 12:06:40,505 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1352/ "HTTP/1.1 404 Not Found"
+2026-07-20 12:06:42,185 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1352/ "HTTP/1.1 404 Not Found"
+2026-07-20 12:09:43,792 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-20 12:09:43,802 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.007s]
+2026-07-20 13:48:00,503 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-20 13:48:00,528 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.019s]
+2026-07-20 13:48:09,075 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/2/ "HTTP/1.1 200 OK"
+2026-07-20 13:48:09,099 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.017s]
+2026-07-20 13:48:09,664 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-20 13:48:19,728 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/strinwg "HTTP/1.1 404 Not Found"
+2026-07-20 19:07:35,596 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-20 19:07:35,660 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.060s]
+2026-07-20 19:07:35,666 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-20 19:07:55,094 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.008s]
+2026-07-21 01:09:12,156 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-21 01:09:12,176 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.014s]
+2026-07-21 01:09:12,184 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.007s]
+2026-07-21 01:09:13,709 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.007s]
+2026-07-21 01:11:23,900 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.014s]
+2026-07-21 01:12:49,075 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=1&limit=20 "HTTP/1.1 200 OK"
+2026-07-21 01:12:49,086 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.007s]
+2026-07-21 01:12:49,095 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.009s]
+2026-07-21 01:13:05,431 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.015s]
+2026-07-21 01:13:18,639 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-21 01:13:34,018 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.013s]
+2026-07-21 01:15:32,721 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1/ "HTTP/1.1 200 OK"
+2026-07-21 01:15:32,749 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.021s]
+2026-07-21 01:15:37,456 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.007s]
+2026-07-21 01:15:44,650 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/222222/ "HTTP/1.1 404 Not Found"
+2026-07-21 01:38:36,706 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/222222/ "HTTP/1.1 404 Not Found"
+2026-07-21 01:38:47,084 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/2/ "HTTP/1.1 200 OK"
+2026-07-21 01:39:37,812 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/22/ "HTTP/1.1 200 OK"
+2026-07-21 01:39:51,524 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/223/ "HTTP/1.1 200 OK"
+2026-07-21 01:39:55,743 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/22322/ "HTTP/1.1 404 Not Found"
+2026-07-21 01:41:04,954 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/32333 "HTTP/1.1 404 Not Found"
+2026-07-21 01:44:19,252 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/13523 "HTTP/1.1 404 Not Found"
+2026-07-21 01:46:05,296 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/13523 "HTTP/1.1 404 Not Found"
+2026-07-21 01:46:18,012 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/13523 "HTTP/1.1 404 Not Found"
+2026-07-21 01:50:44,618 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-21 01:56:01,476 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/13533 "HTTP/1.1 404 Not Found"
+2026-07-21 01:56:01,485 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.007s]
+2026-07-21 01:58:40,890 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/string "HTTP/1.1 404 Not Found"
+2026-07-21 01:58:40,910 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.014s]
+2026-07-21 01:58:52,655 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/strinwwwg "HTTP/1.1 404 Not Found"
+2026-07-21 01:58:52,680 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.004s]
+2026-07-21 14:45:46,204 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.063s]
+2026-07-21 14:47:14,064 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.053s]
+2026-07-21 14:47:25,631 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.007s]
+2026-07-21 14:54:31,604 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.014s]
+2026-07-21 14:58:32,460 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.018s]
+2026-07-21 15:03:25,059 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.013s]
+2026-07-21 15:03:28,807 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.009s]
+2026-07-21 15:03:44,410 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.007s]
+2026-07-21 15:04:54,607 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.012s]
+2026-07-21 15:05:49,062 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-21 15:06:09,509 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.011s]
+2026-07-21 15:35:05,496 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/strinadg "HTTP/1.1 404 Not Found"
+2026-07-21 15:35:05,533 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.014s]
+2026-07-21 16:07:52,199 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-21 16:07:52,219 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.017s]
+2026-07-21 16:07:52,230 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.009s]
+2026-07-21 16:07:55,566 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 16:08:04,293 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/2/ "HTTP/1.1 200 OK"
+2026-07-21 16:08:04,311 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.013s]
+2026-07-21 16:08:10,172 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/222222/ "HTTP/1.1 404 Not Found"
+2026-07-21 16:08:10,181 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 16:08:17,445 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 16:08:31,350 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/strindwag "HTTP/1.1 404 Not Found"
+2026-07-21 16:08:31,375 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 16:08:37,902 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/strindwag "HTTP/1.1 404 Not Found"
+2026-07-21 16:08:37,912 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 16:08:51,842 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 16:08:55,587 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.014s]
+2026-07-21 16:11:09,107 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-21 16:11:09,120 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.009s]
+2026-07-21 16:11:09,127 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 16:11:12,973 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.007s]
+2026-07-21 16:11:19,555 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.012s]
+2026-07-21 16:11:32,747 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1241241 "HTTP/1.1 404 Not Found"
+2026-07-21 16:11:32,768 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.018s]
+2026-07-21 16:50:37,081 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/stringg "HTTP/1.1 404 Not Found"
+2026-07-21 16:50:37,122 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.020s]
+2026-07-21 16:55:33,817 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/stringg "HTTP/1.1 404 Not Found"
+2026-07-21 16:55:33,836 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.008s]
+2026-07-21 16:55:39,052 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/stringgg "HTTP/1.1 404 Not Found"
+2026-07-21 16:55:39,077 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.004s]
+2026-07-21 16:57:34,731 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-21 16:57:39,603 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 16:57:40,607 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-21 16:57:41,443 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 16:57:45,312 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/2/ "HTTP/1.1 200 OK"
+2026-07-21 16:57:45,331 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.013s]
+2026-07-21 16:57:57,283 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 16:59:55,126 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.020s]
+2026-07-21 17:00:00,909 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/stringgsg "HTTP/1.1 404 Not Found"
+2026-07-21 17:00:00,933 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.004s]
+2026-07-21 17:00:04,479 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 17:00:13,070 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 17:00:13,863 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 17:00:27,503 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.012s]
+2026-07-21 17:00:28,046 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.004s]
+2026-07-21 17:00:32,121 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-21 17:00:32,128 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.004s]
+2026-07-21 17:00:32,133 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.004s]
+2026-07-21 17:00:32,862 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 17:00:33,397 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.007s]
+2026-07-21 17:00:35,678 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 17:00:36,372 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-21 17:05:44,190 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/sring "HTTP/1.1 404 Not Found"
+2026-07-21 17:05:44,217 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-21 17:06:18,459 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.016s]
+2026-07-21 17:06:56,788 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 17:09:10,222 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/srig "HTTP/1.1 404 Not Found"
+2026-07-21 17:09:10,252 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 17:09:28,207 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-21 17:09:56,388 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.007s]
+2026-07-21 17:10:03,734 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 17:10:04,722 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 17:10:50,900 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/1363/ "HTTP/1.1 404 Not Found"
+2026-07-21 17:10:50,909 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-21 17:12:11,114 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/srdig "HTTP/1.1 404 Not Found"
+2026-07-21 17:12:11,144 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 17:12:16,115 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.011s]
+2026-07-21 17:12:22,627 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.010s]
+2026-07-21 17:49:53,142 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.008s]
+2026-07-21 17:50:01,151 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.013s]
+2026-07-21 17:50:39,367 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/2 "HTTP/1.1 200 OK"
+2026-07-21 17:50:39,383 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-21 17:51:31,292 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/2 "HTTP/1.1 200 OK"
+2026-07-21 17:51:31,319 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.010s]
+2026-07-21 17:52:07,238 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/2 "HTTP/1.1 200 OK"
+2026-07-21 17:52:07,264 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.012s]
+2026-07-21 17:53:01,952 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/2 "HTTP/1.1 200 OK"
+2026-07-21 17:53:01,985 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-21 17:53:06,091 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.015s]
+2026-07-21 17:53:43,225 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 17:55:32,361 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 17:55:49,003 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.012s]
+2026-07-21 17:56:15,832 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/164 "HTTP/1.1 200 OK"
+2026-07-21 17:56:15,850 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 17:56:19,841 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/164 "HTTP/1.1 200 OK"
+2026-07-21 17:56:19,874 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.004s]
+2026-07-21 17:56:38,383 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 17:56:40,688 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.004s]
+2026-07-21 17:56:48,181 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.004s]
+2026-07-21 18:03:59,908 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/3 "HTTP/1.1 200 OK"
+2026-07-21 18:03:59,942 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 18:08:17,347 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.012s]
+2026-07-21 18:08:26,229 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 18:08:26,961 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.003s]
+2026-07-21 18:13:09,635 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-21 18:13:11,319 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.011s]
+2026-07-21 18:13:34,044 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-21 18:15:30,463 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/4 "HTTP/1.1 200 OK"
+2026-07-21 18:15:30,491 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.015s]
+2026-07-21 18:17:34,146 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.016s]
+2026-07-21 19:07:32,596 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.047s]
+2026-07-21 19:08:00,301 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/10 "HTTP/1.1 200 OK"
+2026-07-21 19:08:00,315 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.011s]
+2026-07-21 19:08:18,924 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/10 "HTTP/1.1 200 OK"
+2026-07-21 19:08:18,959 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.011s]
+2026-07-21 19:08:31,005 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/10 "HTTP/1.1 200 OK"
+2026-07-21 19:08:31,014 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-21 19:09:57,408 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/10 "HTTP/1.1 200 OK"
+2026-07-21 19:09:57,434 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-21 19:10:02,926 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 19:10:34,392 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/10 "HTTP/1.1 200 OK"
+2026-07-21 19:10:34,416 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-21 19:11:07,535 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/10 "HTTP/1.1 200 OK"
+2026-07-21 19:11:07,559 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-21 19:11:16,882 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/pikachu "HTTP/1.1 200 OK"
+2026-07-21 19:11:16,903 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.016s]
+2026-07-21 19:12:48,318 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/pikachu "HTTP/1.1 200 OK"
+2026-07-21 19:12:48,343 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.018s]
+2026-07-21 19:13:15,940 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/pikachu "HTTP/1.1 200 OK"
+2026-07-21 19:13:15,950 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.004s]
+2026-07-22 20:26:50,361 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20 "HTTP/1.1 200 OK"
+2026-07-22 20:26:50,378 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.013s]
+2026-07-22 20:26:50,385 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-22 20:28:40,719 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/23/ "HTTP/1.1 200 OK"
+2026-07-22 20:28:40,731 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-22 20:28:44,217 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-22 20:29:51,306 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.020s]
+2026-07-22 20:29:56,138 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/22/ "HTTP/1.1 200 OK"
+2026-07-22 20:29:56,148 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.004s]
+2026-07-22 20:31:56,247 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/22 "HTTP/1.1 200 OK"
+2026-07-22 20:31:56,272 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-22 20:32:07,357 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.007s]
+2026-07-22 20:32:23,535 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/string "HTTP/1.1 404 Not Found"
+2026-07-22 20:32:23,546 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-22 20:47:45,248 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/string "HTTP/1.1 404 Not Found"
+2026-07-22 20:47:45,264 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.011s]
+2026-07-22 20:47:49,687 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.010s]
+2026-07-22 20:47:55,373 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/stdwadring "HTTP/1.1 404 Not Found"
+2026-07-22 20:47:55,381 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-22 20:50:18,920 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/stdwadring "HTTP/1.1 404 Not Found"
+2026-07-22 20:50:18,937 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.014s]
+2026-07-22 20:50:22,875 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/stdwadring "HTTP/1.1 404 Not Found"
+2026-07-22 20:50:22,887 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.010s]
+2026-07-22 20:50:24,922 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/222 "HTTP/1.1 200 OK"
+2026-07-22 20:50:24,955 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-22 20:51:29,377 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.021s]
+2026-07-22 20:51:33,912 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/221 "HTTP/1.1 200 OK"
+2026-07-22 20:51:33,947 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.011s]
+2026-07-22 20:52:10,131 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/tdwadring "HTTP/1.1 404 Not Found"
+2026-07-22 20:52:10,140 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-22 20:53:24,729 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/tdwadring "HTTP/1.1 404 Not Found"
+2026-07-22 20:53:24,743 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-22 20:53:26,805 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/tdwadring "HTTP/1.1 404 Not Found"
+2026-07-22 20:53:26,824 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.015s]
+2026-07-22 20:55:32,451 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/tdwadring "HTTP/1.1 404 Not Found"
+2026-07-22 20:55:32,468 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.012s]
+2026-07-22 20:55:38,408 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/stdwading "HTTP/1.1 404 Not Found"
+2026-07-22 20:55:38,415 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-22 20:56:02,733 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/stdwading "HTTP/1.1 404 Not Found"
+2026-07-22 20:56:02,742 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-22 20:56:18,529 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/stdwading "HTTP/1.1 404 Not Found"
+2026-07-22 20:56:18,544 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.011s]
+2026-07-22 20:59:14,475 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/stdwading "HTTP/1.1 404 Not Found"
+2026-07-22 20:59:14,491 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.013s]
+2026-07-22 20:59:18,736 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/stdwading "HTTP/1.1 404 Not Found"
+2026-07-22 20:59:18,746 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-22 20:59:37,580 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/tat "HTTP/1.1 404 Not Found"
+2026-07-22 20:59:37,589 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.007s]
+2026-07-22 21:01:18,915 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/tat "HTTP/1.1 404 Not Found"
+2026-07-22 21:01:20,639 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/2223 "HTTP/1.1 404 Not Found"
+2026-07-22 21:01:20,656 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.013s]
+2026-07-22 21:03:51,441 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/tat "HTTP/1.1 404 Not Found"
+2026-07-22 21:03:51,710 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/2223 "HTTP/1.1 404 Not Found"
+2026-07-22 21:03:51,719 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-22 21:03:57,373 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/222 "HTTP/1.1 200 OK"
+2026-07-22 21:03:59,431 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/dwad "HTTP/1.1 404 Not Found"
+2026-07-22 21:03:59,456 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.006s]
+2026-07-22 21:04:09,712 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.012s]
+2026-07-22 21:04:15,075 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/221 "HTTP/1.1 200 OK"
+2026-07-22 21:04:16,884 - INFO - [_client.py:1927] - HTTP Request: GET https://pokeapi.co/api/v2/pokemon/dwadadad "HTTP/1.1 404 Not Found"
+2026-07-22 21:04:16,906 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.003s]
+2026-07-22 21:50:26,231 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.009s]
