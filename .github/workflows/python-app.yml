@@ -12,7 +12,7 @@ jobs:
     
     steps:
       - name: Copiar todo Código do Repositório
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Instalar poetry
         run: |
@@ -41,7 +41,7 @@ jobs:
 
     steps:
       - name: Copiar o Repositório pro Container
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Criar .env temporário
         run: |
