@@ -81,20 +81,10 @@ jobs:
 
       - name: Subir Container
         run: |
-          docker rm -f pokeapi-container || true
-
-          docker run -d -p 8000:8000 --name pokeapi-container \
-            -e REDIS_HOST="localhost" \
-            -e REDIS_PORT="6379" \
-            -e ES_HOST="localhost" \
-            -e ES_PORT="9200" \
-            -e KIBANA_PORT="5601" \
-            -e URL_DB="sqlite:///pokeapi.db" \
-            fastapi-app:latest
-
+          docker compose up -d --build app
           sleep 5
-
-          docker logs pokeapi-container
+          docker compose logs app
+          
 
       - name: Verificar se o Container ainda está de Pé
         run: docker ps | grep pokeapi-container | grep Up
