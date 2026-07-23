@@ -246,9 +246,8 @@ async def alterar_caracteristicas_pokemon(
     log_origem = f'endpoint:/alterar-pokemon/{pokemon_id}'
     
     try:
-        # Verifica se o pokémon foi excluido
-        pokemon_excluido = db.query(ExclusaoPokemon).filter(ExclusaoPokemon.pokemon_id == pokemon_id).first()
-        if pokemon_excluido:
+        id_pokemon_excluido = db.query(ExclusaoPokemon).filter(ExclusaoPokemon.pokemon_id == pokemon_id).first()
+        if id_pokemon_excluido:
             log_status = 'failed'
             log_motivo = 'pokémon está excluido'
             log_origem = f'banco de dados: query no banco de dados'
@@ -258,8 +257,8 @@ async def alterar_caracteristicas_pokemon(
                 detail='Pokémon está excluido!'
             )
 
-        # Verifica se o pokémon está cadastrado
-        if db.query(CadastroPokemon).filter(CadastroPokemon.pokemon_name == body.pokemon_name).first():
+        nome_do_pokemon_cadastrado = db.query(CadastroPokemon).filter(CadastroPokemon.pokemon_name == body.pokemon_name).first()
+        if nome_do_pokemon_cadastrado:
             log_motivo = 'nome do pokemon já existe no banco de dados'
             log_origem = 'banco de dados: query no banco de dados'
             log_status = 'failed'
@@ -268,6 +267,25 @@ async def alterar_caracteristicas_pokemon(
                 status_code=400,
                 detail='Esse nome já existe no banco de dados!'
             )
+
+        id_do_pokemon_cadastrado = db.query(CadastroPokemon.pokemon_id == pokemon_id).first()    
+        if id_do_pokemon_cadastrado:
+            pokemon_atualizado = await atualizar_pokemon_no_banco_de_dados(
+                pokemon_id=pokemon_id,
+                db=db,
+                dados=body,
+                Tabela_Banco_de_dados=CadastroPokemon
+            )
+        
+            if pokemon_atualizado:
+                log_motivo = 'pokémon atualizado com sucesso no banco de dados'
+                log_origem = 'banco de dados: pokemon atualizado'
+
+                # Atualiza o redis
+                redis_client.set(name=f'https://pokeapi.co/api/v2/pokemon/{pokemon_id}/', value=json.dumps(pokemon_atualizado)) # Pega o dicionario atualizado
+
+                return {'message': f'Pokémon {pokemon_id} atualizado com sucesso!'}
+
 
         # ---- Verifica se o pokémon existe na PokeAPI -------------------
 
