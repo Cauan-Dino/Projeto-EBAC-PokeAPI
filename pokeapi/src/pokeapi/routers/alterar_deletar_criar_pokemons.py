@@ -115,15 +115,19 @@ async def deletar_pokemon(
         raise HTTPException(status_code=500, detail="Erro interno no servidor")
     
     finally:
-        # Envia pro Elasticsearch o log
-        await registrar_log_de_buscar_pokemon(
-        offset=None,
-        limit=None,
-        status=log_status,
-        motivo=log_motivo,
-        origem=log_origem,
-        endpoint=log_endpoint_str
-        )
+        try:
+            await registrar_log_de_buscar_pokemon(
+            offset=None,
+            limit=None,
+            origem=log_origem,
+            motivo=log_motivo,
+            endpoint=log_endpoint_str,
+            status=log_status
+            )
+        except Exception as e:
+            # Captura o erro se o Elasticsearch não estiver acessível,
+            print(f"[AVISO] Elasticsearch offline/indisponível: {e}")
+
 
 
 
@@ -211,15 +215,18 @@ async def cadastrar_pokemon(
         raise HTTPException(status_code=500, detail="Erro interno no servidor")
 
     finally:
-        # Manda a log pro elasticsearch 
-        await registrar_log_de_buscar_pokemon(
-        offset=None,
-        limit=None,
-        origem=log_origem,
-        status=log_status,
-        endpoint=log_endpoint_str,
-        motivo=log_motivo
-        )
+        try:
+            await registrar_log_de_buscar_pokemon(
+            offset=None,
+            limit=None,
+            origem=log_origem,
+            motivo=log_motivo,
+            endpoint=log_endpoint_str,
+            status=log_status
+            )
+        except Exception as e:
+            # Captura o erro se o Elasticsearch não estiver acessível,
+            print(f"[AVISO] Elasticsearch offline/indisponível: {e}")
 
 
 
@@ -364,12 +371,15 @@ async def alterar_caracteristicas_pokemon(
         raise HTTPException(status_code=500,detail='Erro no servidor!')
 
     finally:
-        # Envia pro Elasticsearch o log
-        await registrar_log_de_buscar_pokemon(
-        offset=None,
-        limit=None,
-        status=log_status,
-        motivo=log_motivo,
-        origem=log_origem,
-        endpoint=log_endpoint_str
-        )
+        try:
+            await registrar_log_de_buscar_pokemon(
+            offset=None,
+            limit=None,
+            origem=log_origem,
+            motivo=log_motivo,
+            endpoint=log_endpoint_str,
+            status=log_status
+            )
+        except Exception as e:
+            # Captura o erro se o Elasticsearch não estiver acessível,
+            print(f"[AVISO] Elasticsearch offline/indisponível: {e}")
