@@ -43,6 +43,12 @@ jobs:
       - name: Copiar o Repositório pro Container
         uses: actions/checkout@v4
 
+      - name: Criar .env temporário
+        run: |
+          echo "REDIS_PORT=6379" > .env
+          echo "ES_PORT=9200" >> .env
+          echo "KIBANA_PORT=5601" >> .env
+    
       - name: Buildar e Subir Container
         run: |
           docker compose up -d --build app
