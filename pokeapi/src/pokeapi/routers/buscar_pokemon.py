@@ -8,12 +8,12 @@ from sqlalchemy.orm import Session
 from pokeapi.services.database.models import ExclusaoPokemon, CadastroPokemon
 from pokeapi.services.pokemon_service.requisicao_pokeapi import verificar_mudanca_de_pokemons_pokeapi_e_salva_no_cache
 
+
 router = APIRouter(tags=['Buscar pokémon'])
 
 
-
 # Busca todos os pokémons
-@router.get('/pokemonsss')
+@router.get('/pokemons')
 async def buscar_todos_pokemons(
     request: Request,
     limit: int = 20,
