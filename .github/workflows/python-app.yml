@@ -89,7 +89,6 @@ jobs:
             -e ES_HOST="localhost" \
             -e ES_PORT="9200" \
             -e KIBANA_PORT="5601" \
-            -e REDIS_URL="redis://localhost:6379/0" \
             -e URL_DB="sqlite:///pokeapi.db" \
             fastapi-app:latest
 
