@@ -27,7 +27,7 @@ services:
         condition: service_healthy
     
     env_file:
-      - pokeapi/src/pokeapi/.env
+      - .env
 
     volumes:
       - .:/app
@@ -56,13 +56,19 @@ services:
 
     ports:
       - "${ES_PORT}:9200"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:9200/_cluster/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
   
   logstash:
     container_name: logstash
     image: docker.elastic.co/logstash/logstash:8.11.0
 
     depends_on:
-      - elasticsearch
+      elasticsearch:
+        condition: service_healthy
     
     volumes:
       - ./logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
@@ -76,10 +82,12 @@ services:
       - "${KIBANA_PORT}:5601"
     
     environment:
-      - ELASTICSEARCH_HOST=http://${ES_HOST}:{ES_PORT}
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
 
     depends_on:
-      - elasticsearch
+      elasticsearch:
+        condition: service_healthy
+          
 
 volumes:
   esdata:

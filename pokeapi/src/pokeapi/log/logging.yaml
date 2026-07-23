@@ -1,14 +1,14 @@
 version: 1
 disable_existing_loggers: False
 
-formatters:
+formatters: # Define o formato do texto do log
   default:
     format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
     datefmt: "%Y-%m-%d %H:%M:%S"
   detailed:
     format: "%(asctime)s - %(levelname)s - [%(filename)s:%(lineno)d] - %(message)s"
 
-handlers:
+handlers: # Escolhe pra onde enviar o log
   console:
     class: logging.StreamHandler
     formatter: default
@@ -25,7 +25,7 @@ root:
   level: INFO
   handlers: [console, file]
 
-loggers:
+loggers: # Onde o log é gerado
   uvicorn:
     level: INFO
     handlers: [console]

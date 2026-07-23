@@ -10,13 +10,14 @@ ES_PORT = os.getenv('ES_PORT', '9200')
 # Conecta com o elasticsearch
 es_client = AsyncElasticsearch(hosts=[f'http://{ES_HOST}:{ES_PORT}'])
 
-# Pega o caminho absoluto onde logs_settings.py esta armazenado
+# Pega o caminho absoluto onde esta logs
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Junta o caminho absoluto com o logging.yaml
 YAML = os.path.join(BASE_DIR, 'logging.yaml')
 
 
+# Configura o Elasticsearch com o arquivo logging.yaml
 with open(YAML,'r') as f: # Lê o arquivo logging.yaml
     config = yaml.safe_load(f) # Transforma o conteúdo no logging.yaml em dict
     log_path = os.getenv('LOG_FILE_PATH', os.path.join(BASE_DIR, 'logs', 'app.log'))
@@ -31,25 +32,25 @@ logger = logging.getLogger(__name__) # Defini o nome dos logs. Nesse caso os nom
 
 # Função pra registrar log e enviar pro elasticsearch
 async def registrar_log_de_buscar_pokemon(
-    credencias: str | None, 
     offset: int | None, 
     limit: int | None, 
     origem: str, 
     endpoint: str, 
-    status: str
+    status: str,
+    motivo: str
     ):
     # Log que vai ser enviado pro elasticsearch
     log = {
         'timestamp': datetime.utcnow().isoformat(),
         'endpoint': endpoint,
-        'usuario': credencias,
         'page': offset,
         'limit': limit,
         'origem': origem, # Cache, requisição http etc
-        'status': status
+        'status': status,
+        'motivo': motivo
     } 
 
     try:
-        await es_client.index(index='pokeapi-logs',body=log) # Envia o log pro elasticsearch em background
+        await es_client.index(index='pokeapi-logs',body=log) # Envia o log pro elasticsearch de forma assincrona
     except Exception as e:
         logger.error(f'Erro ao enviar log para o Elasticsearch: {e}')
