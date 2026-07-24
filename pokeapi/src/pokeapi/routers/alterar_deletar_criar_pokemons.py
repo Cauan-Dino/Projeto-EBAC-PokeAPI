@@ -38,6 +38,7 @@ async def deletar_pokemon(
         
         pokemon_existe = db.query(CadastroPokemon).filter(CadastroPokemon.pokemon_id == pokemon_id).first()
         pokemon_excluido = db.query(ExclusaoPokemon).filter(ExclusaoPokemon.pokemon_id == pokemon_id).first()
+        return pokemon_existe,pokemon_excluido
         
         if pokemon_excluido:
             log_status = 'failed'

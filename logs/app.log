@@ -414,3 +414,6 @@
 2026-07-24 16:46:42,363 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
 2026-07-24 16:46:54,679 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.004s]
 2026-07-24 16:50:27,106 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.015s]
+2026-07-24 17:16:16,835 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.030s]
+2026-07-24 17:16:23,116 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
+2026-07-24 17:16:23,271 - INFO - [_async_transport.py:271] - POST http://elasticsearch:9200/pokeapi-logs/_doc [status:201 duration:0.005s]
