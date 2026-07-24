@@ -232,7 +232,7 @@ async def cadastrar_pokemon(
 
 
 # Altera as características do pokémon
-@router.put('/alterar-pokemon/{pokemon_id}')
+@router.put('/alterar-pokemonss/{pokemon_id}')
 async def alterar_caracteristicas_pokemon(
     body: AlterarInformacoesPokemon,
     pokemon_id: int,
@@ -256,7 +256,7 @@ async def alterar_caracteristicas_pokemon(
                 status_code=400,
                 detail='Pokémon está excluido!'
             )
-        
+
         nome_do_pokemon_cadastrado = db.query(CadastroPokemon).filter(CadastroPokemon.pokemon_name == body.pokemon_name).first()
         if nome_do_pokemon_cadastrado:
             log_motivo = 'nome do pokemon já existe no banco de dados'
