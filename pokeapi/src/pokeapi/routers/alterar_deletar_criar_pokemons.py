@@ -232,7 +232,7 @@ async def cadastrar_pokemon(
 
 
 # Altera as características do pokémon
-@router.put('/alterar-pokemonss/{pokemon_id}')
+@router.put('/alterar-pokemon/{pokemon_id}')
 async def alterar_caracteristicas_pokemon(
     body: AlterarInformacoesPokemon,
     pokemon_id: int,

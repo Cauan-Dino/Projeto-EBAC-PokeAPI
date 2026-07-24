@@ -176,7 +176,7 @@ class TestAlterarPokemon200:
             new=AsyncMock(return_value=pokemon_atualizado_dict),
         ), patch(f"{MODULE_PATH}.redis_client"):
             
-            response = client.put("/alterar-pokemonss/25", json=self.payload_valido)
+            response = client.put("/alterar-pokemon/25", json=self.payload_valido)
 
         assert response.status_code == 200
  
@@ -207,6 +207,6 @@ class TestAlterarPokemon200:
             new=AsyncMock(return_value=None), # Não atualiza
         ), patch(f"{MODULE_PATH}.redis_client"):
 
-            response = client.put("/alterar-pokemonss/25", json=self.payload_valido)
+            response = client.put("/alterar-pokemon/25", json=self.payload_valido)
 
         assert response.status_code == 200
