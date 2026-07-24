@@ -268,23 +268,23 @@ async def alterar_caracteristicas_pokemon(
                 detail='Esse nome já existe no banco de dados!'
             )
 
-        # id_do_pokemon_cadastrado = db.query(CadastroPokemon).filter(CadastroPokemon.pokemon_id == pokemon_id).first()    
-        # if id_do_pokemon_cadastrado:
-        pokemon_atualizado = await atualizar_pokemon_no_banco_de_dados(
-            pokemon_id=pokemon_id,
-            db=db,
-            dados=body,
-            Tabela_Banco_de_dados=CadastroPokemon
-        )
-    
-        #if pokemon_atualizado:
-        log_motivo = 'pokémon atualizado com sucesso no banco de dados'
-        log_origem = 'banco de dados: pokemon atualizado'
+        id_do_pokemon_cadastrado = db.query(CadastroPokemon).filter(CadastroPokemon.pokemon_id == pokemon_id).first()    
+        if id_do_pokemon_cadastrado:
+            pokemon_atualizado = await atualizar_pokemon_no_banco_de_dados(
+                pokemon_id=pokemon_id,
+                db=db,
+                dados=body,
+                Tabela_Banco_de_dados=CadastroPokemon
+            )
+        
+            if pokemon_atualizado:
+                log_motivo = 'pokémon atualizado com sucesso no banco de dados'
+                log_origem = 'banco de dados: pokemon atualizado'
 
-        # Atualiza o redis
-        redis_client.set(name=f'https://pokeapi.co/api/v2/pokemon/{pokemon_id}/', value=json.dumps(pokemon_atualizado)) # Pega o dicionario atualizado
+                # Atualiza o redis
+                redis_client.set(name=f'https://pokeapi.co/api/v2/pokemon/{pokemon_id}/', value=json.dumps(pokemon_atualizado)) # Pega o dicionario atualizado
 
-        return {'message': f'Pokémon {pokemon_id} atualizado com sucesso!'}
+                return {'message': f'Pokémon {pokemon_id} atualizado com sucesso!'}
 
 
         # ---- Verifica se o pokémon existe na PokeAPI -------------------
