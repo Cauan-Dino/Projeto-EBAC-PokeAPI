@@ -97,9 +97,12 @@ async def deletar_pokemon(
         db.refresh(excluir_pokemon)
 
         # Exclui o pokémon salvo no Redis SE EXISTIR
-        pokemon_no_cache = redis_client.get(f'https://pokeapi.co/api/v2/pokemon/{pokemon_id}')
-        if pokemon_no_cache:
-            redis_client.delete(pokemon_no_cache)
+        cache_key = f'https://pokeapi.co/api/v2/pokemon/{pokemon_id}'
+        try:
+            if redis_client.exists(cache_key):
+                redis_client.delete(cache_key)
+        except Exception as e:
+            print(f"[AVISO] Erro ao limpar cache no Redis: {e}")
 
         return {'message':'Pokémon deletado com sucesso!'}
     
