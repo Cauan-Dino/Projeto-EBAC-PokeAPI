@@ -1,4 +1,5 @@
 Exigencias.md
+pokeapi.db
 # Ambiente virtual local
 .venv/
 venv/
@@ -14,4 +15,3 @@ __pycache__/
 
 # Logs
 pokeapi/src/pokeapi/log/logs/
-pokeapi.db  
