@@ -45,7 +45,7 @@ Todas as ações geram logs estruturados enviados para o Elasticsearch, permitin
    ```
 
 2. Crie um arquivo `.env` na raiz do projeto com as variáveis necessárias, por exemplo:
-   ```env
+```env
   REDIS_HOST=redis
   REDIS_PORT=6379
   LOG_FILE_PATH=/logs/app.log
@@ -53,7 +53,7 @@ Todas as ações geram logs estruturados enviados para o Elasticsearch, permitin
   ES_PORT=9200
   KIBANA_PORT=5601
   URL_DB=sqlite:///pokeapi.db
-   ```
+```
 
 3. Suba os containers (Redis, Elasticsearch/Kibana e a própria API) com Podman Compose:
    ```bash
