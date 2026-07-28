@@ -57,10 +57,6 @@ async def deletar_pokemon(
                 detail='Não pode inserir um pokemon_id abaixo de 1!'
             )
 
-        # Uma única consulta: antes eram duas tabelas (CadastroPokemon e
-        # ExclusaoPokemon) sem nenhuma relação real entre elas, então dava
-        # pra um pokémon existir em uma e não na outra. Agora é uma coluna
-        # (pokemon_excluido) na mesma tabela — uma única fonte de verdade.
         pokemon_no_banco = db.query(CadastroPokemon).filter(CadastroPokemon.pokemon_id == pokemon_id).first()
 
         if pokemon_no_banco and pokemon_no_banco.pokemon_excluido:
@@ -226,9 +222,6 @@ async def cadastrar_pokemon(
         db.commit()
         db.refresh(adicionar_pokemon)
 
-        # Salva no cache usando o mesmo schema canônico (pokemon_id, pokemon_name, ...)
-        # usado pelo resto da API — antes era salvo {'pokemon_name':...,'id':...},
-        # um formato diferente do usado em GET /pokemons/{id}.
         redis_client.set(
             name=chave_pokemon(quantidade_pokemons_cadastrados),
             value=json.dumps(pokemon_orm_para_dict(adicionar_pokemon)),

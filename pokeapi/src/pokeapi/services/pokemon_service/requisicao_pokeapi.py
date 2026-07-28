@@ -114,11 +114,6 @@ async def atualizar_pokemon_no_banco_de_dados(
         db.commit()
         db.refresh(pokemon)
 
-        # Retorna o objeto ORM inteiro (não apenas os campos alterados).
-        # Antes retornava só `dados_para_atualizar`, então o cache era
-        # sobrescrito com um registro PARCIAL (faltando os campos que não
-        # mudaram nessa requisição). Devolvendo o pokémon inteiro, quem
-        # chamar pode montar o dict canônico completo pra cache/resposta.
         return pokemon
 
     return None

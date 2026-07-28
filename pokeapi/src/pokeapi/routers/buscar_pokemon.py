@@ -189,9 +189,6 @@ async def buscar_pokemon_especifico(
         
         # ----------------------------------------------------------
 
-        # Usa o schema canônico (mesmo formato do banco/cadastro/alteração),
-        # em vez do dict ad-hoc {'name','id','height','weight','types','sprites'}
-        # que era usado só aqui e destoava do resto da API.
         formatacao = formatar_pokemon_da_pokeapi(response_json)
 
         redis_client.set(name=URL, value=json.dumps(formatacao), ex=3600) # Salva no redis formatação

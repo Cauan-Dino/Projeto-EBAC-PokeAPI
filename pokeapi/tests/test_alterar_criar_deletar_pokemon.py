@@ -9,9 +9,6 @@ import pytest
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
  
-# ------------------------------------------------------------------
-# AJUSTE AQUI o caminho real do módulo do router
-# ------------------------------------------------------------------
 MODULE_PATH = "pokeapi.routers.alterar_deletar_criar_pokemons"
  
 from importlib import import_module

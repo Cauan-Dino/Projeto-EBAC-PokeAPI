@@ -1,16 +1,3 @@
-"""
-Padroniza o formato dos dados de um pokémon em um único lugar.
-
-Antes existiam PELO MENOS três formatos diferentes circulando entre
-banco de dados, cache e resposta da API:
-  - {'name','id','height','weight','types','sprites': {...}}   (rota GET /pokemons/{id})
-  - {'pokemon_name','pokemon_type', ..., 'id': ...}             (rota POST /cadastrar-pokemon)
-  - dict parcial só com os campos alterados                     (rota PUT /alterar-pokemon)
-
-Isso fazia o mesmo pokémon ter "cara" diferente dependendo de qual
-endpoint o devolveu. Agora todo mundo usa o schema canônico com prefixo
-`pokemon_` (o mesmo usado pelas colunas do banco e pelo PokemonResponse).
-"""
 from typing import Any, Dict
 
 

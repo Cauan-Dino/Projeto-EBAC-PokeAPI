@@ -1,6 +1,3 @@
-"""Testes de validação das operações no banco de dados (SQLAlchemy) e do
-formatador de dados do pokémon, cobrindo o schema padronizado usado em
-todos os endpoints."""
 import os
 os.environ.setdefault('URL_DB', 'sqlite:///:memory:')
 os.environ.setdefault('ES_HOST', 'elasticsearch')
