@@ -6,13 +6,7 @@ from sqlalchemy import JSON
 class CadastroPokemon(Base):
     """
     Tabela única de pokémons cadastrados.
-
     A exclusão é lógica (soft delete) através da coluna `pokemon_excluido`.
-    Antes existia uma tabela separada (`exclusao_pokemon`) apenas duplicando
-    `pokemon_id`/nome, sem nenhuma relação real (FK) com esta tabela — o que
-    permitia inconsistência entre as duas (um pokémon podia existir em uma e
-    não na outra). Unificar em uma única tabela com uma flag resolve isso:
-    uma única fonte de verdade por pokémon.
     """
     __tablename__ = 'pokemon'
 
