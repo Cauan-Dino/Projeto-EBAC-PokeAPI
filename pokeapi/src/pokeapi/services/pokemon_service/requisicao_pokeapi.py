@@ -113,5 +113,7 @@ async def atualizar_pokemon_no_banco_de_dados(
 
         db.commit()
         db.refresh(pokemon)
-        
-        return dados_para_atualizar
+
+        return pokemon
+
+    return None

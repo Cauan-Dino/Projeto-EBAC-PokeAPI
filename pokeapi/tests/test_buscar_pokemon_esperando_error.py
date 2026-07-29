@@ -1,6 +1,9 @@
 from fastapi.testclient import TestClient
 from pokeapi.main import app
 from pytest_mock import MockerFixture
+from pokeapi.services.database.criacao_database import sessao_db
+from unittest.mock import MagicMock
+from sqlalchemy.orm import Session
 import httpx2
 import pytest
 
@@ -47,3 +50,43 @@ class TestBuscarTodosPokemons400:
 
         response = client.get('/pokemons?limit=0&offset=-1')
         assert response.status_code == mock_requisicao_pokeapi.status_code
+
+
+# ====================================================================
+# GET /pokemons/{pokemon_id} -> 400 (pokémon excluído logicamente)
+# ====================================================================
+class TestBuscarPokemonEspecificoExcluido:
+    def test_buscar_pokemon_excluido_retorna_400(self, mocker: MockerFixture):
+        pokemon_excluido = MagicMock(pokemon_excluido=True)
+        mock_db = MagicMock(spec=Session)
+        mock_db.query.return_value.filter.return_value.first.return_value = pokemon_excluido
+        app.dependency_overrides[sessao_db] = lambda: mock_db
+
+        mocker.patch('pokeapi.routers.buscar_pokemon.registrar_log_de_buscar_pokemon', new_callable=mocker.AsyncMock)
+
+        try:
+            response = client.get('/pokemons/25')
+        finally:
+            app.dependency_overrides.pop(sessao_db, None)
+
+        assert response.status_code == 400
+        assert response.json()['detail'] == 'Pokémon está excluido!'
+
+
+# ====================================================================
+# GET /pokemons/{pokemon_id} -> 500 (erro interno inesperado)
+# ====================================================================
+class TestBuscarPokemonEspecificoErroInterno:
+    def test_erro_inesperado_no_banco_retorna_500(self, mocker: MockerFixture):
+        mock_db = MagicMock(spec=Session)
+        mock_db.query.side_effect = Exception("falha inesperada de conexão")
+        app.dependency_overrides[sessao_db] = lambda: mock_db
+
+        mocker.patch('pokeapi.routers.buscar_pokemon.registrar_log_de_buscar_pokemon', new_callable=mocker.AsyncMock)
+
+        try:
+            response = client.get('/pokemons/25')
+        finally:
+            app.dependency_overrides.pop(sessao_db, None)
+
+        assert response.status_code == 500

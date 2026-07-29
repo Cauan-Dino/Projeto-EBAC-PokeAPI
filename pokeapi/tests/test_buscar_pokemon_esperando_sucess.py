@@ -70,19 +70,23 @@ class TestBuscarPokemonEspecifico200:
     
         response = client.get('/pokemons/1')
         assert response.status_code == mock_pokeapi.status_code
-        assert response.json()['id'] == mock_pokeapi.json()['id']
+        # Schema canônico e padronizado: pokemon_id (não mais "id" solto)
+        assert response.json()['pokemon_id'] == mock_pokeapi.json()['id']
+        assert response.json()['pokemon_name'] == mock_pokeapi.json()['forms'][0]['name']
+        assert response.json()['pokemon_type'] == ['grass', 'poison']
 
 
     def test_buscar_pokemon_especifico_com_retorno_do_redis(self, inicializar_redis, mocker: MockerFixture):
         mock_redis = inicializar_redis
     
+        # Schema canônico e padronizado (o mesmo usado pelo banco e pela PokeAPI)
         pokemon_cache_redis = {
-            "id": 1,
-            "name": "bulbasaur",
-            "height": 7,
-            "weight": 69,
-            "types": ["grass", "poison"],
-            "sprites": {
+            "pokemon_id": 1,
+            "pokemon_name": "bulbasaur",
+            "pokemon_height": 7,
+            "pokemon_weight": 69,
+            "pokemon_type": ["grass", "poison"],
+            "pokemon_sprites": {
                 "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
                 "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"
             }
@@ -97,7 +101,7 @@ class TestBuscarPokemonEspecifico200:
         response = client.get('/pokemons/1')
     
         assert response.status_code == 200
-        assert response.json()['name'] == pokemon_cache_redis['name']
+        assert response.json()['pokemon_name'] == pokemon_cache_redis['pokemon_name']
 
 
 # ====================================================================

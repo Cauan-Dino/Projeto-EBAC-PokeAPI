@@ -1,19 +1,35 @@
 from fastapi import APIRouter, HTTPException, Depends, Request
 from pokeapi.services.redis_cache.redis_config import redis_client
+from pokeapi.services.redis_cache.cache_keys import chave_pokemon, chave_paginacao
 import json
 import httpx2
 from pokeapi.log.logs_settings import registrar_log_de_buscar_pokemon, logger
 from pokeapi.services.database.criacao_database import sessao_db
 from sqlalchemy.orm import Session
-from pokeapi.services.database.models import ExclusaoPokemon, CadastroPokemon
+from pokeapi.services.database.models import CadastroPokemon
 from pokeapi.services.pokemon_service.requisicao_pokeapi import verificar_mudanca_de_pokemons_pokeapi_e_salva_no_cache
+from pokeapi.services.pokemon_service.formatador import formatar_pokemon_da_pokeapi, pokemon_orm_para_dict
+from pokeapi.schemas.schema_alterar_criar_pokemons import PokemonResponse, PokemonPaginadoResponse, ErroResponse
 
 
 router = APIRouter(tags=['Buscar pokémon'])
 
 
 # Busca todos os pokémons
-@router.get('/pokemons')
+@router.get(
+    '/pokemons',
+    response_model=PokemonPaginadoResponse,
+    summary='Lista pokémons paginados',
+    description=(
+        'Retorna uma página de pokémons vindos da PokeAPI. O resultado fica em cache '
+        'no Redis por 15 minutos (900s) para evitar requisições repetidas à PokeAPI.'
+    ),
+    responses={
+        400: {'model': ErroResponse, 'description': 'limit ou offset inválidos'},
+        502: {'model': ErroResponse, 'description': 'Erro ao consultar a PokeAPI'},
+        503: {'model': ErroResponse, 'description': 'PokeAPI indisponível'},
+    },
+)
 async def buscar_todos_pokemons(
     request: Request,
     limit: int = 20,
@@ -35,7 +51,7 @@ async def buscar_todos_pokemons(
                 detail='Limit ou offset inválidos!'
             )
 
-        key = f'https://pokeapi.co/api/v2/pokemon/?offset={offset}&limit={limit}' # Chave do redis
+        key = chave_paginacao(offset=offset, limit=limit)  # Chave do redis (mesma URL usada na PokeAPI)
         
         try:
             cache = redis_client.get(key) # Pega o valor da chave do redis
@@ -76,19 +92,29 @@ async def buscar_todos_pokemons(
             # Captura o erro se o Elasticsearch não estiver acessível,
             print(f"[AVISO] Elasticsearch offline/indisponível: {e}")
 
-    
-
-
-
 
 # Busca um pokémon específico
-@router.get('/pokemons/{pokemon_id}')
+@router.get(
+    '/pokemons/{pokemon_id}',
+    response_model=PokemonResponse,
+    summary='Busca um pokémon específico',
+    description=(
+        'Busca um pokémon por id, nessa ordem: cache (Redis) → banco de dados → PokeAPI. '
+        'Se o pokémon tiver sido excluído logicamente, retorna 400.'
+    ),
+    responses={
+        400: {'model': ErroResponse, 'description': 'Pokémon foi excluído logicamente'},
+        404: {'model': ErroResponse, 'description': 'Pokémon não encontrado na PokeAPI'},
+        502: {'model': ErroResponse, 'description': 'Erro ao consultar a PokeAPI'},
+        503: {'model': ErroResponse, 'description': 'PokeAPI indisponível'},
+    },
+)
 async def buscar_pokemon_especifico(
     pokemon_id: int,
     request: Request,
     db: Session = Depends(sessao_db)
     ):
-    URL = f'https://pokeapi.co/api/v2/pokemon/{pokemon_id}/'
+    URL = chave_pokemon(pokemon_id)
     
     # Log que será enviado pro Elasticsearch caso retorne 200. Se não serão outros valores
     log_status = 'success'
@@ -97,9 +123,11 @@ async def buscar_pokemon_especifico(
     log_origem = f'endpoint:/pokemons/{pokemon_id}'
 
     try:
-        # Se a query for TRUE, o pokémon está excluido
-        pokemon_esta_excluido = db.query(ExclusaoPokemon).filter(ExclusaoPokemon.pokemon_id == pokemon_id).first()
-        if pokemon_esta_excluido:
+        # Uma única consulta no banco resolve tanto "existe?" quanto "está excluído?",
+        # já que agora é a mesma tabela (antes eram duas tabelas/duas queries).
+        pokemon_no_banco = db.query(CadastroPokemon).filter(CadastroPokemon.pokemon_id == pokemon_id).first()
+
+        if pokemon_no_banco and pokemon_no_banco.pokemon_excluido:
             log_status = 'failed'
             log_origem = 'banco de dados:query no banco de dados'
             log_motivo = 'pokémon já está excluido'
@@ -121,14 +149,12 @@ async def buscar_pokemon_especifico(
             log_origem = 'cache'
             return json.loads(cache)
         
-        
-        # Se a query for TRUE, o pokémon existe no Banco de Dados (RETORNA VIA BANCO DE DADOS)
-        pokemon_existe_no_db = db.query(CadastroPokemon).filter(CadastroPokemon.pokemon_id == pokemon_id).first()
-        if pokemon_existe_no_db:
+        # Se existe no Banco de Dados (e não está excluído), retorna via banco
+        if pokemon_no_banco:
             log_motivo = 'pokémon existe no banco de dados'
             log_origem = 'banco de dados:query no banco de dados'
 
-            return pokemon_existe_no_db
+            return pokemon_no_banco
         
 
         # ------ Requisição na URL da PokeAPI ----------------------
@@ -163,22 +189,9 @@ async def buscar_pokemon_especifico(
         
         # ----------------------------------------------------------
 
-        formatacao = {
-            'name': response_json['forms'][0]['name'],
-            'id': response_json['id'],
-            'height': response_json['height'],
-            'weight': response_json['weight'],
-            'types': [
-                i['type']['name'] for i in response_json['types']
-            ],
-            'sprites': {
-                'front_default': response_json['sprites']['front_default'],
-                'back_default': response_json['sprites']['back_default']
-            }
-            
-        }
+        formatacao = formatar_pokemon_da_pokeapi(response_json)
 
-        redis_client.set(name=URL,value=json.dumps(formatacao),ex=3600) # Salva no redis formatação
+        redis_client.set(name=URL, value=json.dumps(formatacao), ex=3600) # Salva no redis formatação
 
         return formatacao
     
@@ -205,7 +218,3 @@ async def buscar_pokemon_especifico(
         except Exception as e:
             # Captura o erro se o Elasticsearch não estiver acessível,
             print(f"[AVISO] Elasticsearch offline/indisponível: {e}")
-
-
-
-
