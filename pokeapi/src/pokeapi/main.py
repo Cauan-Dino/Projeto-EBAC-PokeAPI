@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-load_dotenv('.env') # Remover em produção
+load_dotenv('.env') 
 from fastapi import FastAPI
 from pokeapi.routers.buscar_pokemon import router as buscar_pokemon 
 from pokeapi.services.database.criacao_database import engine, Base
